@@ -1,7 +1,7 @@
 package academy.devdojo.maratonajava.javacore.Atividade.test;
 
 import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
-import academy.devdojo.maratonajava.javacore.Atividade.dominio.AnimeService;
+import academy.devdojo.maratonajava.javacore.Atividade.service.AnimeService;
 
 public class AnimeTest {
     public static void main(String[] args) {

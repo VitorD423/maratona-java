@@ -1,4 +1,6 @@
-package academy.devdojo.maratonajava.javacore.Atividade.dominio;
+package academy.devdojo.maratonajava.javacore.Atividade.service;
+
+import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
 
 public class AnimeService {
 
