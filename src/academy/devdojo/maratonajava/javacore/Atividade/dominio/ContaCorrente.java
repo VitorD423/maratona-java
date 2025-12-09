@@ -10,6 +10,22 @@ public class ContaCorrente {
 
     }
 
+
+    public void imprimirConta(){
+        System.out.println(this.titular);
+        System.out.println(this.saldo);
+    }
+
+
+//Arrumar impressora
+
+
+
+
+
+
+
+
     public double aplicarRendimento(double taxa) {
         double novoSaldo = this.saldo * (1 + taxa);
         this.saldo = novoSaldo;
