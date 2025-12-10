@@ -5,10 +5,9 @@ public class Carro {
     private double velocidadeMaxima;
     private double velocidadeLimite = 250;
 
-    public Carro(String nome, double velocidadeMaxima, double velocidadeLimite) {
+    public Carro(String nome, double velocidadeMaxima) {
         this.nome = nome;
         this.velocidadeMaxima = velocidadeMaxima;
-        this.velocidadeLimite = velocidadeLimite;
     }
 
     public void imprime(){
