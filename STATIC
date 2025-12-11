@@ -1,0 +1,9 @@
+# Uso do static em Java – Exemplo com Carro
+
+Este exemplo foi criado para demonstrar, de forma simples, o uso do modificador `static` em Java. A classe `Carro` possui atributos de instância, como `nome` e `velocidadeMaxima`, que pertencem a cada objeto criado, e um atributo `static`, `velocidadeLimite`, que representa uma regra comum para todos os carros.
+
+Por ser `static`, `velocidadeLimite` pertence à classe `Carro` e não a um objeto específico. Isso significa que existe apenas um único valor compartilhado por todas as instâncias. Por esse motivo, o acesso ao atributo é feito diretamente pelo nome da classe, como `Carro.velocidadeLimite`.
+
+Na classe de teste, o valor da velocidade limite é acessado e alterado sem a criação de objetos. Ao mudar esse valor, todos os carros passam automaticamente a usar o novo limite, mostrando como o `static` funciona como uma configuração global.
+
+O modificador `static` deve ser usado quando o valor não depende das características individuais do objeto, mas sim de uma regra geral. Já atributos que variam de objeto para objeto não devem ser declarados como `static`. Este exemplo ajuda a entender, na prática, quando e por que utilizar esse recurso em Java.
