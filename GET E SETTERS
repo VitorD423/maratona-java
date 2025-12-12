@@ -1,0 +1,30 @@
+# Getters e Setters em Java
+
+Getters e Setters são métodos usados para acessar e modificar valores de atributos privados dentro de uma classe. Como a boa prática da orientação a objetos recomenda que os atributos sejam privados, esses métodos servem como uma forma controlada de ler e alterar esses valores, mantendo a segurança e o encapsulamento do objeto.
+
+O Getter é responsável por retornar o valor de um atributo. Ele apenas entrega a informação, sem permitir alterações. Já o Setter serve para modificar o valor de um atributo, permitindo validar ou controlar o que pode ou não ser colocado dentro dele. Esse controle evita que o objeto receba valores inválidos ou inconsistentes.
+
+Exemplo de uso:
+
+public class Carro {
+    private String nome;
+    private double velocidadeMaxima;
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public double getVelocidadeMaxima() {
+        return velocidadeMaxima;
+    }
+
+    public void setVelocidadeMaxima(double velocidadeMaxima) {
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+}
+
+Ao usar getters e setters, conseguimos proteger os dados internos da classe e garantir que o objeto seja manipulado de forma segura e consistente. Eles são fundamentais para manter o encapsulamento e são amplamente usados na maioria dos projetos Java, inclusive em frameworks como Spring.
