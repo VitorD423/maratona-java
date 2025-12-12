@@ -1,0 +1,32 @@
+# Construtores em Java
+
+Construtores são métodos especiais usados para inicializar objetos no momento em que são criados. Eles têm o mesmo nome da classe, não possuem tipo de retorno e são executados automaticamente quando usamos a palavra-chave `new`. O propósito principal de um construtor é garantir que o objeto já comece com valores iniciais válidos, evitando que atributos importantes fiquem sem definição.
+
+Se nenhum construtor for criado, o Java gera automaticamente um construtor padrão sem parâmetros. Porém, se você criar qualquer construtor, o construtor padrão deixa de existir e, caso queira utilizá-lo, você precisa escrevê-lo manualmente.
+
+Também é possível criar vários construtores na mesma classe, desde que recebam parâmetros diferentes. Isso é chamado de sobrecarga e permite criar objetos de formas diferentes, dependendo das informações disponíveis.
+
+Exemplo de construtor:
+
+public class Carro {
+    private String nome;
+    private double velocidadeMaxima;
+
+    public Carro(String nome, double velocidadeMaxima) {
+        this.nome = nome;
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+}
+
+Exemplo de sobrecarga:
+
+public Carro(String nome) {
+    this.nome = nome;
+}
+
+public Carro(String nome, double velocidadeMaxima) {
+    this.nome = nome;
+    this.velocidadeMaxima = velocidadeMaxima;
+}
+
+Construtores são usados quando queremos garantir que os objetos sejam criados já completos, quando certos dados são obrigatórios ou quando queremos facilitar a criação de instâncias com diferentes combinações de valores. Eles tornam o código mais claro, seguro e organizado dentro da orientação a objetos.
