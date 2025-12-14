@@ -1,0 +1,28 @@
+# Sobrecarga de Métodos em Java
+
+Sobrecarga de métodos acontece quando uma mesma classe possui vários métodos com o mesmo nome, mas com listas de parâmetros diferentes. O Java identifica qual método deve ser executado com base na quantidade, tipo ou ordem dos parâmetros passados na chamada.
+
+A sobrecarga não depende do nome do método mudar, nem do tipo de retorno. O que realmente diferencia um método do outro são os parâmetros. Alterar apenas o tipo de retorno não caracteriza sobrecarga e causa erro de compilação.
+
+Exemplo de sobrecarga:
+
+public class Calculadora {
+
+    public int soma(int a, int b) {
+        return a + b;
+    }
+
+    public double soma(double a, double b) {
+        return a + b;
+    }
+
+    public int soma(int a, int b, int c) {
+        return a + b + c;
+    }
+}
+
+No exemplo acima, o método `soma` pode ser usado de diferentes formas, dependendo dos valores enviados. O Java escolhe automaticamente a versão correta do método durante a compilação.
+
+A sobrecarga é muito utilizada para facilitar o uso de métodos, permitindo que o mesmo comportamento seja acessado de maneiras diferentes, sem obrigar o desenvolvedor a criar nomes diferentes para cada variação.
+
+Sobrecarga de métodos é comum em construtores, métodos utilitários e APIs, tornando o código mais legível, organizado e fácil de usar.
