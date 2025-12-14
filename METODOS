@@ -1,0 +1,35 @@
+# Métodos em Java
+
+Métodos são blocos de código responsáveis por definir o comportamento de uma classe. Eles representam as ações que um objeto pode executar e ajudam a organizar a lógica do programa, evitando repetição de código e facilitando a manutenção.
+
+Um método pode ou não retornar um valor, pode receber parâmetros e pode ser chamado quantas vezes forem necessárias. Quando um método não retorna nada, ele usa o tipo `void`. Quando retorna algum valor, é obrigatório informar o tipo de retorno e usar a palavra-chave `return`.
+
+Exemplo simples de método:
+
+public void imprime() {
+    System.out.println("Imprimindo informações");
+}
+
+Métodos também podem receber parâmetros, que são valores enviados para o método no momento da chamada:
+
+public void setNome(String nome) {
+    this.nome = nome;
+}
+
+Nesse caso, o método recebe um valor e o utiliza para alterar o estado do objeto.
+
+Quando um método retorna um valor, ele pode ser usado em expressões ou armazenado em variáveis:
+
+public String getNome() {
+    return nome;
+}
+
+Os métodos podem ser de instância, quando dependem de um objeto para serem chamados, ou `static`, quando pertencem à classe e podem ser acessados sem criar uma instância.
+
+Exemplo de método static:
+
+public static void imprimirMensagem() {
+    System.out.println("Método static");
+}
+
+Métodos são usados para definir comportamentos, encapsular regras de negócio e tornar o código mais legível e reutilizável. Eles são uma das partes mais importantes da orientação a objetos, pois conectam os dados (atributos) às ações que podem ser realizadas sobre eles.
