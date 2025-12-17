@@ -10,7 +10,7 @@ public class Carro {
         this.velocidadeMaxima = velocidadeMaxima;
     }
 
-    public static void imprime(){
+    public void imprime(){
         System.out.println("----------------");
         System.out.println("Nome "+this.nome);
         System.out.println("Velocidade máxima "+this.velocidadeMaxima);
