@@ -10,7 +10,7 @@ A ordem de execução ao criar um objeto é sempre:
 
 No exemplo abaixo, o bloco de inicialização cria um array de 100 episódios e preenche cada posição automaticamente, evitando duplicação de código nos construtores:
 
-package academy.devdojo.maratonajava.javacore.Eblocosinicializacao.domain;
+package academy.devdojo.maratonajava.javacore.Eblocosinicializacao.dominio;
 
 public class Anime {
     private String nome;
@@ -48,7 +48,7 @@ Já no teste, apenas criamos o objeto e imprimimos os episódios. O bloco garant
 
 package academy.devdojo.maratonajava.javacore.Eblocosinicializacao.test;
 
-import academy.devdojo.maratonajava.javacore.Eblocosinicializacao.domain.Anime;
+import academy.devdojo.maratonajava.javacore.Eblocosinicializacao.dominio.Anime;
 
 public class AnimeTest01 {
     public static void main(String[] args) {
