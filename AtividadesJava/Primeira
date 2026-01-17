@@ -1,0 +1,115 @@
+package academy.devdojo.maratonajava.javacore.Atividade.dominio;
+
+public class Anime {
+    private String nome;
+    private String tipo;
+    private int episodios;
+
+
+    public void init(String nome, String tipo, int episodios){
+        this.nome = nome;
+        this.tipo = tipo;
+        this.episodios = episodios;
+    }
+
+
+    public void imprimeAnime(){
+        System.out.println(this.nome);
+        System.out.println(this.tipo);
+        System.out.println(this.episodios);
+    }
+
+
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
+    public void setTipo(String tipo) {
+
+        this.tipo = tipo;
+    }
+
+    public int getEpisodios() {
+
+        return episodios;
+    }
+
+    public void setEpisodios(int episodios) {
+
+        this.episodios = episodios;
+    }
+}
+
+
+
+SERVICE:
+
+package academy.devdojo.maratonajava.javacore.Atividade.service;
+
+import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
+
+public class AnimeService {
+
+    public void aumentarEpisodios(Anime anime, int quantidade){
+      int episodiosAtuais = anime.getEpisodios();
+      int novoValor = episodiosAtuais + quantidade;
+      anime.setEpisodios(novoValor);
+
+    }
+
+    public void mudarTipo(Anime anime, String novoTipo){
+        anime.setTipo(novoTipo);
+
+    }
+
+    public Anime criarCopia(Anime original){
+        Anime copia = new Anime();
+        String nome = original.getNome();
+        String tipo = original.getTipo();
+        int episodios = original.getEpisodios();
+
+        copia.init(nome, tipo, episodios);
+        return copia;
+
+    }
+}
+
+TEST
+
+package academy.devdojo.maratonajava.javacore.Atividade.test;
+
+import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
+import academy.devdojo.maratonajava.javacore.Atividade.service.AnimeService;
+
+public class AnimeTest {
+    public static void main(String[] args) {
+        Anime anime = new Anime();
+        AnimeService animeService = new AnimeService();
+        anime.init("Jojo", "Ação", 40);
+        anime.imprimeAnime();
+        System.out.println("//////////////");
+        animeService.aumentarEpisodios(anime,10);
+        anime.imprimeAnime();
+        animeService.mudarTipo(anime,"Aventura");
+        anime.imprimeAnime();
+        System.out.println("//////////////");
+        Anime copia = animeService.criarCopia(anime);
+        copia.imprimeAnime();
+        copia.setNome("Jojo Cópia");
+        System.out.println("Original: ");
+        anime.imprimeAnime();
+        System.out.println("Cópia: ");
+        copia.imprimeAnime();
+
+
+    }
+}

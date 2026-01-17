@@ -1,0 +1,59 @@
+# Modificador static em Java
+
+O modificador static é usado quando um atributo ou método pertence à classe e não a um objeto específico. Isso significa que existe apenas uma única cópia desse membro na memória, compartilhada por todas as instâncias da classe.
+
+Neste exemplo, a classe Carro possui atributos de instância, como nome e velocidadeMaxima, que variam de objeto para objeto, e um atributo static chamado velocidadeLimite, que representa uma regra global válida para todos os carros.
+
+package academy.devdojo.maratonajava.javacore.Fmodificadorestatico.dominio;
+
+public class Carro {
+    private String nome;
+    private double velocidadeMaxima;
+    private static double velocidadeLimite = 250;
+
+    public Carro(String nome, double velocidadeMaxima) {
+        this.nome = nome;
+        this.velocidadeMaxima = velocidadeMaxima;
+    }
+
+    public void imprime(){
+        System.out.println("----------------");
+        System.out.println("Nome " + this.nome);
+        System.out.println("Velocidade máxima " + this.velocidadeMaxima);
+        System.out.println("Velocidade limite " + Carro.velocidadeLimite);
+    }
+
+    public static void setVelocidadeLimite(double velocidadeLimite){
+        Carro.velocidadeLimite = velocidadeLimite;
+    }
+
+    public static double getVelocidadeLimite(){
+        return Carro.velocidadeLimite;
+    }
+}
+
+O atributo velocidadeLimite é static porque ele não depende das características de um carro específico. Ao alterar esse valor, todos os objetos da classe passam automaticamente a usar o novo limite.
+
+Os métodos setVelocidadeLimite e getVelocidadeLimite também são static, pois manipulam um atributo que pertence à classe. Métodos static não podem acessar diretamente atributos de instância, já que não dependem de um objeto para existir.
+
+No teste abaixo, o valor da velocidade limite é alterado antes mesmo da criação dos objetos, mostrando que não é necessário instanciar a classe para acessar membros static:
+
+package academy.devdojo.maratonajava.javacore.Fmodificadorestatico.test;
+
+import academy.devdojo.maratonajava.javacore.Fmodificadorestatico.dominio.Carro;
+
+public class CarroTest01 {
+    public static void main(String[] args) {
+        Carro.setVelocidadeLimite(180);
+
+        Carro c1 = new Carro("BWM", 280);
+        Carro c2 = new Carro("Mercedes", 275);
+        Carro c3 = new Carro("Audi", 290);
+
+        c1.imprime();
+        c2.imprime();
+        c3.imprime();
+    }
+}
+
+Esse exemplo mostra que o static é ideal para valores compartilhados, regras globais e comportamentos que não dependem do estado individual dos objetos. Ele ajuda a manter o código mais organizado, claro e coerente com os princípios da orientação a objetos.

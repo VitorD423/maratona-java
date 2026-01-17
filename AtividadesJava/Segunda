@@ -1,0 +1,80 @@
+package academy.devdojo.maratonajava.javacore.Atividade.dominio;
+
+public class ContaBancaria {
+    private String titular;
+    private double saldo;
+    private int numeroDaConta;
+
+  public void init(String titular, double saldoInicial, int numeroConta){
+        this.titular = titular;
+        this.saldo = saldoInicial;
+        this.numeroDaConta = numeroConta;
+    }
+
+   public void imprimirConta(){
+        System.out.println(this.titular);
+        System.out.println(this.saldo);
+        System.out.println(this.numeroDaConta);
+    }
+
+
+    public String getTitular() {
+        return titular;
+    }
+
+    public void setTitular(String titular) {
+        this.titular = titular;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public void setSaldo(double saldo) {
+        this.saldo = saldo;
+    }
+
+    public int getNumeroDaConta() {
+        return numeroDaConta;
+    }
+
+    public void setNumeroDaConta(int numeroDaConta) {
+        this.numeroDaConta = numeroDaConta;
+    }
+}
+
+CLASS
+
+package academy.devdojo.maratonajava.javacore.Atividade.service;
+
+import academy.devdojo.maratonajava.javacore.Atividade.dominio.ContaBancaria;
+
+public class ContaService {
+   public void depositar(ContaBancaria conta, double valor){
+        double valorAtual = conta.getSaldo();
+        double valorNovo = valorAtual + valor;
+        conta.setSaldo(valorNovo);
+    }
+
+   public void sacar(ContaBancaria conta, double valor){
+        double valorAtual = conta.getSaldo();
+        if (valor > valorAtual){
+            System.out.println("Valor insuficiente");
+            return;
+        }
+            double valorNovo = valorAtual - valor;
+            conta.setSaldo(valorNovo);
+
+
+    }
+
+    public ContaBancaria criarcopia(ContaBancaria original){
+        ContaBancaria copia = new ContaBancaria();
+        String titular = original.getTitular();
+        double saldo = original.getSaldo();
+        int numeroDaConta = original.getNumeroDaConta();
+
+        copia.init(titular, saldo, numeroDaConta );
+        return copia;
+    }
+}

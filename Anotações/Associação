@@ -1,0 +1,49 @@
+# Associação em Java
+
+Associação é um relacionamento entre classes onde um objeto pode conhecer ou utilizar outro objeto, sem que exista uma dependência forte de ciclo de vida. Ou seja, um objeto pode existir independentemente do outro, mas eles podem trabalhar juntos.
+
+Neste exemplo, a associação acontece quando vários objetos do tipo Jogador são agrupados e utilizados juntos. Cada jogador é criado de forma independente, possuindo seu próprio nome e comportamento, e depois são associados em uma estrutura comum.
+
+package academy.devdojo.maratonajava.javacore.Gassociacao.dominio;
+
+public class Jogador {
+    private String nome;
+
+    public Jogador(String nome){
+        this.nome = nome;
+    }
+
+    public void imprime(){
+        System.out.println(this.nome);
+    }
+
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+}
+
+Na classe de teste, vários jogadores são criados e associados em um array. Essa é uma forma simples de associação, onde um objeto passa a conhecer outros objetos sem que eles dependam um do outro para existir.
+
+package academy.devdojo.maratonajava.javacore.Gassociacao.test;
+
+import academy.devdojo.maratonajava.javacore.Gassociacao.dominio.Jogador;
+
+public class JogadorTest {
+    public static void main(String[] args) {
+        Jogador jogador1 = new Jogador("Pelé");
+        Jogador jogador2 = new Jogador("Romario");
+        Jogador jogador3 = new Jogador("Cafu");
+
+        Jogador[] jogadores = new Jogador[]{jogador1, jogador2, jogador3};
+
+        for (Jogador jogador : jogadores) {
+            jogador.imprime();
+        }
+    }
+}
+
+Esse exemplo representa uma associação do tipo "um para muitos", onde vários objetos Jogador são relacionados dentro de uma mesma estrutura. Associação é muito comum em sistemas reais, como times, turmas, pedidos e listas de usuários, e é um dos conceitos fundamentais da orientação a objetos.
