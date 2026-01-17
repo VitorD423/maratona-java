@@ -38,13 +38,15 @@ public class Anime {
         this.nome = nome;
     }
 
-    public String getNome(){
+    public String getNome()
+    {
         return this.nome;
     }
 
-    public void setTipo(String tipo){
+    public void setTipo(String tipo) {
         this.tipo = tipo;
     }
+
     public String getTipo(){
         return this.tipo;
     }
