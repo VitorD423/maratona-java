@@ -4,6 +4,21 @@ public class Veiculo {
     protected String marca;
     protected double velocidadeMaxima;
 
+    static {
+        System.out.println("Static Veiculo");
+    }
+
+    {
+        System.out.println("Instance Veiculo 1");
+    }
+    {
+        System.out.println("Instance Veiculo 2");
+    }
+
+    public Veiculo() {
+        System.out.println("Constructor Veiculo");
+    }
+
     public Veiculo(String marca, double velocidadeMaxima) {
         this.marca = marca;
         this.velocidadeMaxima = velocidadeMaxima;
