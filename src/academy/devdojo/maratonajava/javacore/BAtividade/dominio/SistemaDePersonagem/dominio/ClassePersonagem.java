@@ -1,14 +1,16 @@
 package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio;
 
 public enum ClassePersonagem {
-    GUERREIRO(200,"Gosta de Lutar"),
-    MAGO(70,"Magia"),
-    ARQUEIRO(120,"Flecha");
+    GUERREIRO("Guerreiro",200,"Gosta de Lutar"),
+    MAGO("Mago",70,"Magia"),
+    ARQUEIRO("Arqueiro",120,"Flecha");
 
+    private String nome;
     private double valorBaseDeVida;
     private String descricao;
 
-    ClassePersonagem(double valorBaseDeVida, String descricao) {
+    ClassePersonagem(String nome,double valorBaseDeVida, String descricao) {
+        this.nome = nome;
         this.valorBaseDeVida = valorBaseDeVida;
         this.descricao = descricao;
     }
@@ -19,5 +21,9 @@ public enum ClassePersonagem {
 
     public String getDescricao() {
         return descricao;
+    }
+
+    public String getNome() {
+        return nome;
     }
 }

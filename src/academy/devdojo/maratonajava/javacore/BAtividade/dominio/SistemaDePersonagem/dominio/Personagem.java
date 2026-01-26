@@ -11,13 +11,23 @@ public class Personagem {
         this.tipoAtaque = tipoAtaque;
     }
 
+
+    public double calcularDanoTotal(){
+      return classe.getValorBaseDeVida() + tipoAtaque.getMultiplicadorDeDano();
+
+    }
+
+
     @Override
     public String toString() {
-        return "Personagem{" +
-                "nome='" + nome + '\'' +
-                ", classe=" + classe.getDescricao() +
-                ", tipoAtaque=" + tipoAtaque.getMultiplicadorDeDano() +
-                '}';
+        return "\nPersonagem: " +
+                "\n Nome: " + nome +
+                "\n Classe: " + classe.getNome() +
+                "\n Descrição " + classe.getDescricao() +
+                "\n Tipo ataque: " + tipoAtaque.getMultiplicadorDeDano() +
+                "\n Vida base: " + classe.getValorBaseDeVida() +
+                "\n Dano Total: " + calcularDanoTotal()
+                ;
     }
 
 
