@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.dominio;
 
 public enum TipoAtaque {
     CORPO_A_CORPO(2.5),

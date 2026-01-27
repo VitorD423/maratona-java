@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePedido.dominio;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePedido.dominio;
 
 
 public class Pedido {

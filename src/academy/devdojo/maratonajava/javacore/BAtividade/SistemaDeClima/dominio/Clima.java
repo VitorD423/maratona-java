@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDeClima.dominio;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDeClima.dominio;
 
 public enum Clima {
     ENSOLARADO(10,"Dia quente"),

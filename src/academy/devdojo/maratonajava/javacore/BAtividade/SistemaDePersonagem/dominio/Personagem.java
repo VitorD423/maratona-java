@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.dominio;
 
 public class Personagem {
     private String nome;

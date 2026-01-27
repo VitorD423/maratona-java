@@ -1,7 +1,7 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDeClima.test;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDeClima.test;
 
-import academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDeClima.dominio.Cidade;
-import academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDeClima.dominio.Clima;
+import academy.devdojo.maratonajava.javacore.BAtividade.SistemaDeClima.dominio.Cidade;
+import academy.devdojo.maratonajava.javacore.BAtividade.SistemaDeClima.dominio.Clima;
 
 public class ClimaTest01 {
     public static void main(String[] args) {

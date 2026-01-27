@@ -1,8 +1,8 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.test;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.test;
 
-import academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio.ClassePersonagem;
-import academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio.Personagem;
-import academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDePersonagem.dominio.TipoAtaque;
+import academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.dominio.ClassePersonagem;
+import academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.dominio.Personagem;
+import academy.devdojo.maratonajava.javacore.BAtividade.SistemaDePersonagem.dominio.TipoAtaque;
 
 public class PersonagemTest01 {
     public static void main(String[] args) {

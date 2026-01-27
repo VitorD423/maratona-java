@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.BAtividade.dominio.SistemaDeClima.dominio;
+package academy.devdojo.maratonajava.javacore.BAtividade.SistemaDeClima.dominio;
 
 public class Cidade {
     private String nome;
