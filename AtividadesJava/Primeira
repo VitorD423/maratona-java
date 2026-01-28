@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.javacore.Atividade.dominio;
+package academy.devdojo.maratonajava.Atividades.Atividade.dominio;
 
 public class Anime {
     private String nome;
@@ -53,9 +53,9 @@ public class Anime {
 
 SERVICE:
 
-package academy.devdojo.maratonajava.javacore.Atividade.service;
+package academy.devdojo.maratonajava.Atividades.Atividade.service;
 
-import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
+import academy.devdojo.maratonajava.Atividades.Atividade.dominio.Anime;
 
 public class AnimeService {
 
@@ -85,10 +85,10 @@ public class AnimeService {
 
 TEST
 
-package academy.devdojo.maratonajava.javacore.Atividade.test;
+package academy.devdojo.maratonajava.Atividades.Atividade.test;
 
-import academy.devdojo.maratonajava.javacore.Atividade.dominio.Anime;
-import academy.devdojo.maratonajava.javacore.Atividade.service.AnimeService;
+import academy.devdojo.maratonajava.Atividades.Atividade.dominio.Anime;
+import academy.devdojo.maratonajava.Atividades.Atividade.service.AnimeService;
 
 public class AnimeTest {
     public static void main(String[] args) {
