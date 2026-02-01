@@ -10,7 +10,7 @@ public class PedidoCartao extends Pedido implements Processavel{
 
     @Override
     public void processar() {
-        System.out.println("Processando pagamento");
+        System.out.println("Processando pagamento no cartão");
     }
 
     public String getCodigoTransacao() {
