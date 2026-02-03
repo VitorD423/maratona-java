@@ -1,6 +1,6 @@
-package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXECECOES.test;
+package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXCECOES.test;
 
-import academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXECECOES.dominio.Conta;
+import academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXCECOES.dominio.Conta;
 
 public class contaTest01 {
     public static void main(String[] args) {

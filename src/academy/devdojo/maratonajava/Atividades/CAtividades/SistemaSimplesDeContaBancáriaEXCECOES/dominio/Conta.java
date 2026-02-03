@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXECECOES.dominio;
+package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaSimplesDeContaBancáriaEXCECOES.dominio;
 
 public class Conta {
     private double saldo;
