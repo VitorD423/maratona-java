@@ -1,6 +1,6 @@
-package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentos.test;
+package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentosEXCECOES.test;
 
-import academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentos.dominio.Assento;
+import academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentosEXCECOES.dominio.Assento;
 
 public class AssentoTest01 {
     public static void main(String[] args) {

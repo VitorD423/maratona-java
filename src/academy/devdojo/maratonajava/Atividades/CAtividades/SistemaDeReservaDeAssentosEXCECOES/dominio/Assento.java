@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentos.dominio;
+package academy.devdojo.maratonajava.Atividades.CAtividades.SistemaDeReservaDeAssentosEXCECOES.dominio;
 
 public class Assento {
     private int numero;
