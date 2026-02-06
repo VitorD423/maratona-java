@@ -22,10 +22,10 @@ public class RuntimeExceptionTest04 {
         }
         try {
             talvezLanceException();
-        }catch (SQLException e){
-
+        }catch (SQLException throwables){
+            throwables.printStackTrace();
         }catch (IOException e){
-
+            e.printStackTrace();
         }
     }
 
