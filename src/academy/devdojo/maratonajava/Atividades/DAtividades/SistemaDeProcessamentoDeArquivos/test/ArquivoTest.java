@@ -10,17 +10,17 @@ public class ArquivoTest {
 
         try {
             ArquivoService.processarArquivo("",20);
-        } catch (IllegalArgumentException e){
-            System.out.println("Dentro do IllegalArgumentException");
-        } catch (ArithmeticException e){
-            System.out.println("Dentro do ArithmeticException");
+        } catch (IllegalArgumentException | ArithmeticException e){
+            System.out.println("Dentro do IllegalArgumentException,ArithmeticException e FileNotFoundException");
         } catch (FileNotFoundException e){
-            System.out.println("Dentro do FileNotFoundException");
-        } catch (SQLException e ){
+            System.out.println("Arquivo não encontrado");
+        } catch (SQLException e){
             System.out.println("Dentro do SQLException");
         } catch (RuntimeException e){
             System.out.println("Dentro do RuntimeException");
-        } finally {
+        }
+
+        finally {
             System.out.println("Processamento finalizado");
         }
     }
