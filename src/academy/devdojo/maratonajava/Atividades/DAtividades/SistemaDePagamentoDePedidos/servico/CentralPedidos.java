@@ -12,7 +12,7 @@ public class CentralPedidos {
 
     public static void gerarResumo(Pedido pedido){
         System.out.println("Cliente: " + pedido.getCliente());
-        System.out.println("Tipo do cliente: " + pedido.getTipoPedido());
+        System.out.println("Tipo do pedido: " + pedido.getTipoPedido());
         System.out.println("Valor final: " + pedido.calcularTotal());
 
         if (pedido instanceof PedidoInternacional){

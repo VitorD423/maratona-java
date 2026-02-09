@@ -1,7 +1,7 @@
 package academy.devdojo.maratonajava.Atividades.DAtividades.SistemaDePagamentoDePedidos.dominio;
 
 public class PedidoPromocional extends Pedido implements Processavel{
-    private final double desconto = 0.80;
+    private static final double DESCONTO = 0.8;
     public PedidoPromocional(String cliente, double valorBase, TipoPedido tipoPedido) {
         super(cliente, valorBase, tipoPedido);
     }
@@ -12,7 +12,7 @@ public class PedidoPromocional extends Pedido implements Processavel{
             throw new IllegalArgumentException("Valor do pedido promocional invalido");
         }
 
-        return getValorBase() * desconto;
+        return getValorBase() * DESCONTO;
     }
 
     @Override
@@ -21,6 +21,6 @@ public class PedidoPromocional extends Pedido implements Processavel{
     }
 
     public double getDesconto() {
-        return desconto;
+        return DESCONTO;
     }
 }
