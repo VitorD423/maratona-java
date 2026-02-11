@@ -3,9 +3,9 @@ package academy.devdojo.maratonajava.Atividades.DAtividades.ProcessamentoDeAtend
 import academy.devdojo.maratonajava.Atividades.DAtividades.SistemaDePagamentoDePedidos.dominio.Processavel;
 
 public abstract class Atendimento implements Processavel {
-    private String cliente;
-    private int tempoEstimado;
-    private TipoAtendimento tipoAtendimento;
+    private final String cliente;
+    private final int tempoEstimado;
+    private final TipoAtendimento tipoAtendimento;
 
     public Atendimento(String cliente, int tempoEstimado, TipoAtendimento tipoAtendimento) {
         if (tempoEstimado <= 0){
