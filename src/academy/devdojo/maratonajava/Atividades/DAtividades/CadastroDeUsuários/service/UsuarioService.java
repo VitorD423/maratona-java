@@ -10,14 +10,14 @@ import java.util.List;
 public class UsuarioService {
     private List<Usuario> usuarios = new ArrayList<>();
 
-    public void cadastrar(Usuario usuario) throws EmailInvalidoException{
+    public void cadastrar(Usuario usuario){
         validar(usuario);
         usuarios.add(usuario);
         System.out.println("Usuário cadastrado com sucesso!");
 
     }
 
-    private void validar(Usuario usuario) throws EmailInvalidoException{
+    private void validar(Usuario usuario){
         if (usuario.getEmail() == null ||
                 !usuario.getEmail().matches("^[A-Za-z0-9+_.-]+@[A-Za-z0-9.-]+$")){
             throw new EmailInvalidoException("Email inválido");

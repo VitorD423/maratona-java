@@ -12,7 +12,7 @@ public class UsuarioTest {
 
         try {
             service.cadastrar(usuario1);
-        } catch (EmailInvalidoException e){
+        } catch (RuntimeException e){
             System.out.println(e.getMessage());
         }
 
@@ -21,7 +21,7 @@ public class UsuarioTest {
         try {
         Usuario usuario2 = new Usuario("","diego0Ottres",17);
             service.cadastrar(usuario2);
-        } catch (EmailInvalidoException | RuntimeException e){
+        } catch (RuntimeException e){
             System.out.println(e.getMessage());
         }
     }
