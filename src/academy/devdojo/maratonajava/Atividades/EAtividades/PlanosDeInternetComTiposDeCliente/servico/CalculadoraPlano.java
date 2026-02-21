@@ -4,21 +4,21 @@ public class CalculadoraPlano {
 
     public  double calcularValorPlano(long gigabytes){
 
-        double valor;
+        double valores;
 
         if (gigabytes <= 10){
-            valor = 50;
+            valores = 50;
         } else if (gigabytes <= 20){
-            valor = 50 + (gigabytes - 10) * 5;
+            valores = 50 + (gigabytes - 10) * 5;
         } else {
-            valor = 100 + (gigabytes - 20) * 8;
+            valores = 100 + (gigabytes - 20) * 8;
         }
 
         if (gigabytes >= 30){
-            valor = valor * 0.90;
+            valores = valores * 0.90;
         }
 
-        return valor;
+        return valores;
     }
 
 
