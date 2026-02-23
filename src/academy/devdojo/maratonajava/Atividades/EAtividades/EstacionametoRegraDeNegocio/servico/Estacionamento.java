@@ -4,7 +4,6 @@ public class Estacionamento {
 
     public double calcularValor(long horas){
         double valores;
-        double valorComDesconto;
         if (horas <= 1){
             valores = 5;
         }else if (horas > 1 && horas <= 3){
