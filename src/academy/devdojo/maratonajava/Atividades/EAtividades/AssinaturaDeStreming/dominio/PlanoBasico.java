@@ -6,6 +6,8 @@ public class PlanoBasico implements Plano{
 
         if (gigabytesConsumidos < 0){
             throw new IllegalArgumentException("GB não pode ser negativo");
+
+
         }
 
         if (gigabytesConsumidos <= 10){
