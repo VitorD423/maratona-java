@@ -12,6 +12,12 @@ public class EestacionamentoTest {
         Cliente clienteMensalista = new ClienteMensalista();
 
         Vaga vagaCoberta = new VagaCoberta();
+        Vaga vagaComun = new VagaComum();
+        Vaga vagaVIP = new VagaVIP();
+
+        System.out.println("Test");
+
+        System.out.println(service.calcularPlano(clienteMensalista,vagaCoberta,32));
 
     }
 }
