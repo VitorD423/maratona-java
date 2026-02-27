@@ -25,6 +25,10 @@ public class TemporalAdjustersTest01 {
         System.out.println(now);
         System.out.println(now.getDayOfWeek());
 
+        now = LocalDate.now().with(TemporalAdjusters.firstDayOfNextYear());
+        System.out.println(now);
+        System.out.println(now.getDayOfWeek());
+
 
 
 
