@@ -38,5 +38,7 @@ public class DateTimeFormatterTest01 {
         DateTimeFormatter formatterGR = DateTimeFormatter.ofPattern("dd.MMMM.yyyy", Locale.GERMAN);
         String formatGR = LocalDate.now().format(formatterGR);
         System.out.println(formatGR);
+
+
     }
 }
