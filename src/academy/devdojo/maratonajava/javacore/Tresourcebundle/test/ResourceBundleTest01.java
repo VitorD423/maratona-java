@@ -17,5 +17,9 @@ public class ResourceBundleTest01 {
         System.out.println(bundle.getString("good.morning"));
 
 
+
+        System.out.println(bundle.getString("hi"));
+
+
     }
 }
