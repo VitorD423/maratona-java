@@ -3,7 +3,7 @@ package academy.devdojo.maratonajava.Atividades.EAtividades.Regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexTest05 {
+public class RegexTest07 {
     public static void main(String[] args) {
         // \d = Todos os digitos
         // \D = Tudo o que não for digito
@@ -19,17 +19,29 @@ public class RegexTest05 {
         // {n,m} de n até m
         // () Agrupamento
         // | o(v|c)o ovo | oco
-        // $
+        // ^ INICIO DA STRING
+        // $ FIM DA STRING
         // . 1.3 = 123, 133, 1@3, 1A3
 
-        String regex = "\\d+\\.\\d+\\.\\d+\\.\\d+";
-        String texto = "User login from 192.168.0.1 and 10.0.0.45";
+        // (?=.*[A-Z]) Isso é um lookahead : existe uma
+        // letra maiúscula em algum lugar da string
+        //(?=.*\d)
+        //.{8,} : Qualquer caractere no mínimo 8 vezes
+
+        String regex = "^(?=.*[A-Z])(?=.*\\d).{8,}$";
+        String texto = "Java1234";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
 
-        while (matcher.find()){
-            System.out.print(matcher.group()+"\n");
+
+        if (texto.matches(regex)){
+            System.out.println("Senha válido");
+        }else {
+            System.out.println("Senha inválido");
         }
+//        while (matcher.find()){
+//            System.out.print(matcher.group()+"\n");
+//        }
 
     }
 }
