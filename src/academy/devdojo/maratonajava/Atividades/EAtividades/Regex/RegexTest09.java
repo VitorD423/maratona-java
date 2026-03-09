@@ -3,7 +3,7 @@ package academy.devdojo.maratonajava.Atividades.EAtividades.Regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexTest08 {
+public class RegexTest09 {
     public static void main(String[] args) {
         // \d = Todos os digitos
         // \D = Tudo o que não for digito
@@ -22,13 +22,8 @@ public class RegexTest08 {
         // $
         // . 1.3 = 123, 133, 1@3, 1A3
 
-        String regex = "ERROR.*";
-        String texto = """
-                INFO 2024-10-05 User logged in 
-                ERROR 2024-10-06 User not found 
-                INFO 2024-10-07 Logout 
-                ERROR 2024-10-08 Database down 
-                """;
+        String regex = "[a-f0-9]{8}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{4}-[a-fA-F0-9]{12}";
+        String texto = "ID: 550e8400-e29b-41d4-a716-446655440000";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
 

@@ -3,7 +3,7 @@ package academy.devdojo.maratonajava.Atividades.EAtividades.Regex;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-public class RegexTest08 {
+public class RegexTest10 {
     public static void main(String[] args) {
         // \d = Todos os digitos
         // \D = Tudo o que não for digito
@@ -13,6 +13,7 @@ public class RegexTest08 {
         // \W = Tudo o que não for incluso no \w
         // [] = vai procurar por algo dentro do colchete por exemplo
         // [abc] vai procurar ou por a ou por b ou por c
+        // [^abc] Vai procurar tudo oque não for a b ou c
         // ? Zero ou uma
         // * Zero ou mais
         // + Uma ou mais
@@ -22,18 +23,13 @@ public class RegexTest08 {
         // $
         // . 1.3 = 123, 133, 1@3, 1A3
 
-        String regex = "ERROR.*";
-        String texto = """
-                INFO 2024-10-05 User logged in 
-                ERROR 2024-10-06 User not found 
-                INFO 2024-10-07 Logout 
-                ERROR 2024-10-08 Database down 
-                """;
+        String regex = "(\\w+)@";
+        String texto = "Emails: luffy@hotmail.com, zoro@mail.com";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(texto);
 
         while (matcher.find()){
-            System.out.print(matcher.group()+"\n");
+            System.out.print(matcher.group(1)+"\n");
         }
 
     }
