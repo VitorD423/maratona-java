@@ -16,7 +16,7 @@ public class FileReaderTest01 {
 //            }
             int i;
             while ((i=fr.read()) != -1){
-                System.out.println(i);
+                System.out.print((char)i);
             }
 
         } catch (IOException e) {
