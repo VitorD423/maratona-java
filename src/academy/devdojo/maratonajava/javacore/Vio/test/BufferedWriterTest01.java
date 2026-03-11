@@ -7,11 +7,12 @@ import java.io.IOException;
 
 public class BufferedWriterTest01 {
     public static void main(String[] args) {
-        File file = new File("file.txt");
-        try (FileWriter fw = new FileWriter(file, true);
+        File file = new File("file.txt"); //Criando o arquivo
+        try (FileWriter fw = new FileWriter(file, true); // Writer responsavel pela escrita do arquivo
              BufferedWriter br = new BufferedWriter(fw)){
-            fw.write("O DevDojo é lindo, é o melhor curso do brasilllllllll\nContinuando a cantoria na próxima linha");
-            fw.flush();
+            br.write("O DevDojo é lindo, é o melhor curso do brasilllllllll\nContinuando a cantoria na próxima linha");
+            br.newLine(); // Pular linha baseado no sistema operacional
+            br.flush(); //Ele garante que os dados sejam salvos sem esperar o buffer encher ou o arquivo fechar
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
