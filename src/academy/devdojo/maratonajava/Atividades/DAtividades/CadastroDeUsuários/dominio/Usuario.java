@@ -6,7 +6,7 @@ public class Usuario {
 
     public Usuario(String nome, String email, int idade) {
 
-        if (nome.isBlank()){
+         if (nome.isBlank()){
             throw new NomeInvalidoException("Nome invalido");
         }
 
