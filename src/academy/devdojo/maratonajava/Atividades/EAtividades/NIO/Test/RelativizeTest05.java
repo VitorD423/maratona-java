@@ -8,5 +8,7 @@ public class RelativizeTest05 {
         Path path1 = Paths.get("/home/vitor");
         Path path2 = Paths.get("/home/vitor/projetos/java/Main.java");
         System.out.println(path1.relativize(path2));
+        System.out.println("----------------");
+        System.out.println(path2.relativize(path1));
     }
 }
