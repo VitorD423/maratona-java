@@ -14,7 +14,11 @@ public class BasicFileAttributesTest10 {
 try(var arquivos = Files.list(path)) {
     arquivos.forEach(arquivo -> {
         try {
-            System.out.println(arquivo.getFileName() + " - " + Files.size(arquivo));
+
+            BasicFileAttributes attr = Files.readAttributes(arquivo, BasicFileAttributes.class);
+
+
+            System.out.println(arquivo.getFileName() + " - " + attr.size() + " bytes " + " - " + attr.lastModifiedTime());
         }catch (IOException e){
             e.printStackTrace();
         }
