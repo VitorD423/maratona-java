@@ -10,11 +10,17 @@ import java.nio.file.attribute.BasicFileAttributes;
 public class BasicFileAttributesTest10 {
     public static void main(String[] args) throws IOException {
         Path path = Paths.get("pasta2");
-        var arquivos = Files.list(path);
+        ;
+try(var arquivos = Files.list(path)) {
+    arquivos.forEach(arquivo -> {
+        try {
+            System.out.println(arquivo.getFileName() + " - " + Files.size(arquivo));
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    });
+}
 
-        arquivos.forEach(arquivo ->{
-            System.out.println(arquivo.getFileName());
-        });
 
     }
 }
