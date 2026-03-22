@@ -17,7 +17,7 @@ class ListAllFiles extends SimpleFileVisitor<Path>{
 
     @Override
     public FileVisitResult visitFile(Path file, BasicFileAttributes attrs) throws IOException {
-        if (matcher.matches(file) && attrs.size() < 1024) {
+        if (matcher.matches(file) && attrs.size() > 1024) {
 
             String linha = file.getFileName()
                     + " - " + attrs.size() + " bytes";
