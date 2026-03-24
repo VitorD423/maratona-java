@@ -7,18 +7,19 @@ import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
 import java.util.zip.ZipEntry;
 import java.util.zip.ZipInputStream;
-import java.util.zip.ZipOutputStream;
+
 
 public class UnzipTest01 {
     public static void main(String[] args) {
         Path zipFile = Paths.get("pasta/arquivo.zip");
         Path destino = Paths.get("pasta/descompactado");
 
+        unzip(zipFile, destino);
     }
 
     private static void unzip(Path zipFile, Path destino){
         try {
-            Files.createDirectory(destino);
+            Files.createDirectories(destino);
 
             try (ZipInputStream zis =
                      new ZipInputStream(Files.newInputStream(zipFile))){
@@ -29,9 +30,9 @@ public class UnzipTest01 {
                     Path novoArquivo = destino.resolve(entry.getName());
 
                     if (entry.isDirectory()){
-                        Files.createDirectory(novoArquivo);
+                        Files.createDirectories(novoArquivo);
                     } else {
-                        Files.createDirectory(novoArquivo.getParent());
+                        Files.createDirectories(novoArquivo.getParent());
 
                         Files.copy(zis, novoArquivo, StandardCopyOption.REPLACE_EXISTING);
                     }
