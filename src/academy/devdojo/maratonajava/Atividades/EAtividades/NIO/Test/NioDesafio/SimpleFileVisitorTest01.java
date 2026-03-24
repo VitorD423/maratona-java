@@ -4,8 +4,7 @@ package academy.devdojo.maratonajava.Atividades.EAtividades.NIO.Test.NioDesafio;
 import java.io.IOException;
 import java.nio.file.*;
 import java.nio.file.attribute.BasicFileAttributes;
-import java.util.ArrayList;
-import java.util.List;
+
 
 class MeuVisitor extends SimpleFileVisitor<Path>{
 
