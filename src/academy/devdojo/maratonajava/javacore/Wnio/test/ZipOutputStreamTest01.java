@@ -13,18 +13,18 @@ public class ZipOutputStreamTest01 {
         // output mandando para algum lugar
         Path arquivoZip = Paths.get("pasta/arquivo.zip");
         Path arquivosParaZipar = Paths.get("pasta/subpasta1/subsubpasta1");
-        zip(arquivoZip, arquivosParaZipar);
+        zip(arquivoZip,arquivosParaZipar);
     }
     private static void zip(Path arquivoZip, Path arquivosParaZipar){
         try(ZipOutputStream zipStream = new ZipOutputStream(Files.newOutputStream(arquivoZip));
             DirectoryStream<Path> directoryStream = Files.newDirectoryStream(arquivosParaZipar)) {
-            for (Path file: directoryStream){
+            for (Path file : directoryStream){
                 ZipEntry zipEntry = new ZipEntry(file.getFileName().toString());
                 zipStream.putNextEntry(zipEntry);
+                Files.copy(file, zipStream);
                 zipStream.closeEntry();
             }
-
-        } catch (IOException e) {
+        } catch (Exception e) {
             e.printStackTrace();
         }
     }
