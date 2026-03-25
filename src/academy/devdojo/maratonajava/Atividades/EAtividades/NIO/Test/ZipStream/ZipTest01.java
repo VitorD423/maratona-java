@@ -11,11 +11,11 @@ public class ZipTest01 {
     public static void main(String[] args) throws IOException {
         Path path1 = Paths.get("arquivo3.txt");
         Path path2 = Paths.get("arquivo4.txt");
-
+        Path zip = Paths.get("arquivo.zip");
         Files.writeString(path1,"TEXTO");
         Files.writeString(path2,"TEXTO");
 
-        try (ZipOutputStream zip = new ZipOutputStream(Files.newOutputStream())){
+        try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zip))){
 
         } catch (IOException e){
             e.printStackTrace();
