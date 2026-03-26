@@ -21,6 +21,8 @@ public class ZipTest02 {
             ZipEntry zipEntry2 = new ZipEntry(path2.getFileName().toString());
             zos.putNextEntry(zipEntry1);
             zos.putNextEntry(zipEntry2);
+            Files.copy(path1, zos);
+            Files.copy(path2, zos);
 
 
         }
