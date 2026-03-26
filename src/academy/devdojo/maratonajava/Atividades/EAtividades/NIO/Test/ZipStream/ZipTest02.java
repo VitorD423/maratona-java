@@ -15,9 +15,14 @@ public class ZipTest02 {
         Files.writeString(path2, "ESCRITA PAGINA 2");
         Path zip = Paths.get("arquivo.zip");
 
-        try (ZipOutputStream zop = new ZipOutputStream(Files.newOutputStream(zip))){
+        try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zip))){
 
-            ZipEntry zipEntry = new ZipEntry(path1.getFileName().toString());
+            ZipEntry zipEntry1 = new ZipEntry(path1.getFileName().toString());
+            ZipEntry zipEntry2 = new ZipEntry(path2.getFileName().toString());
+            zos.putNextEntry(zipEntry1);
+            zos.putNextEntry(zipEntry2);
+
+
         }
     }
 }
