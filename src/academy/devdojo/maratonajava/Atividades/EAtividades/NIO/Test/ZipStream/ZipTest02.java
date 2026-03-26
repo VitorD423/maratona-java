@@ -18,11 +18,16 @@ public class ZipTest02 {
         try (ZipOutputStream zos = new ZipOutputStream(Files.newOutputStream(zip))){
 
             ZipEntry zipEntry1 = new ZipEntry(path1.getFileName().toString());
-            ZipEntry zipEntry2 = new ZipEntry(path2.getFileName().toString());
             zos.putNextEntry(zipEntry1);
+            Files.copy(path1,zos);
+            zos.closeEntry();
+
+
+
+            ZipEntry zipEntry2 = new ZipEntry(path2.getFileName().toString());
             zos.putNextEntry(zipEntry2);
-            Files.copy(path1, zos);
             Files.copy(path2, zos);
+            zos.closeEntry();
 
 
         }
