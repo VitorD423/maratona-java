@@ -37,7 +37,12 @@ public class ZipTest02 {
 
         try(ZipInputStream zis = new ZipInputStream(Files.newInputStream(zip)))  {
 
-            ZipEntry entry = zis.getNextEntry();
+            ZipEntry entry;
+
+            while ((entry = zis.getNextEntry()) != null){
+                System.out.println(entry.getName());
+                zis.closeEntry();
+            }
 
         } catch (IOException e){
             e.printStackTrace();
