@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.zip.ZipEntry;
 import java.util.zip.ZipOutputStream;
 
 public class ZipTest02 {
@@ -16,6 +17,7 @@ public class ZipTest02 {
 
         try (ZipOutputStream zop = new ZipOutputStream(Files.newOutputStream(zip))){
 
+            ZipEntry zipEntry = new ZipEntry(path1.getFileName().toString());
         }
     }
 }
