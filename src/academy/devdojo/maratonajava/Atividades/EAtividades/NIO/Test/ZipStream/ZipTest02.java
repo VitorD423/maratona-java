@@ -5,6 +5,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.zip.ZipEntry;
+import java.util.zip.ZipInputStream;
 import java.util.zip.ZipOutputStream;
 
 public class ZipTest02 {
@@ -30,6 +31,16 @@ public class ZipTest02 {
             zos.closeEntry();
 
 
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try(ZipInputStream zis = new ZipInputStream(Files.newInputStream(zip)))  {
+
+            ZipEntry entry = zis.getNextEntry();
+
+        } catch (IOException e){
+            e.printStackTrace();
         }
     }
 }
