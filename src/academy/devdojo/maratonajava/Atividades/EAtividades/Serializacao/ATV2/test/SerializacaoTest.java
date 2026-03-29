@@ -1,15 +1,19 @@
 package academy.devdojo.maratonajava.Atividades.EAtividades.Serializacao.ATV2.test;
 
 import academy.devdojo.maratonajava.Atividades.EAtividades.Serializacao.ATV2.dominio.Aluno;
+import academy.devdojo.maratonajava.Atividades.EAtividades.Serializacao.ATV2.dominio.Materias;
 
 import java.io.*;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
+import java.util.List;
 
 public class SerializacaoTest {
     public static void main(String[] args) {
         Aluno aluno = new Aluno("Vitor",1,"BOLO");
+        aluno.setMaterias(List.of(new Materias("Portugues",2),
+                new Materias("Matematica", 5)));
         serializar(aluno);
         deserializar();
     }

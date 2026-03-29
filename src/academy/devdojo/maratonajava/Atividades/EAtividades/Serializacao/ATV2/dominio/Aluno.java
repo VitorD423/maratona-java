@@ -65,6 +65,14 @@ private void readObject(ObjectInputStream ois){
                 '}';
     }
 
+    public List<Materias> getMaterias() {
+        return materias;
+    }
+
+    public void setMaterias(List<Materias> materias) {
+        this.materias = materias;
+    }
+
     public String getNome() {
         return nome;
     }
