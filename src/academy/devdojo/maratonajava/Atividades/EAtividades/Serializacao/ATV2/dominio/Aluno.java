@@ -7,27 +7,40 @@ public class Aluno implements Serializable {
     private static final long serialVersionUID = -572016195870678424L;
     private String nome;
     private  int id;
-    transient String senha;
+    private transient String senha;
 
 
-    public Aluno(String nome, int id) {
+    public Aluno(String nome, int id, String senha) {
         this.nome = nome;
         this.id = id;
+        this.senha = senha;
     }
 
-@Serial
+    @Serial
 private void writeObject(ObjectOutputStream oos){
     try {
             oos.defaultWriteObject();
+            oos.writeUTF(senha);
         }catch (IOException e){
         e.printStackTrace();
     }
 }
+
+private void readObject(ObjectInputStream ois){
+        try {
+            ois.defaultReadObject();
+            senha = ois.readUTF();
+        } catch (IOException | ClassNotFoundException e) {
+            e.printStackTrace();
+        }
+}
+
     @Override
     public String toString() {
         return "Aluno{" +
                 "nome='" + nome + '\'' +
                 ", id=" + id +
+                ", senha='***" + '\'' +
                 '}';
     }
 
@@ -37,5 +50,21 @@ private void writeObject(ObjectOutputStream oos){
 
     public int getId() {
         return id;
+    }
+
+    public String getSenha() {
+        return senha;
+    }
+
+    public void setSenha(String senha) {
+        this.senha = senha;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
     }
 }
