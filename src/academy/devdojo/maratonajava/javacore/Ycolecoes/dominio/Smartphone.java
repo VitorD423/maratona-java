@@ -1,5 +1,7 @@
 package academy.devdojo.maratonajava.javacore.Ycolecoes.dominio;
 
+import java.util.Objects;
+
 public class Smartphone {
     private  String serialNumber;
     private String marca;
@@ -26,8 +28,19 @@ public class Smartphone {
        if (obj == null) return false;
        if (this == obj) return true;
        if (this.getClass() != obj.getClass()) return false;
-        Smartphone smartphone = (Smartphone) obj;
+       Smartphone smartphone = (Smartphone) obj;
         return serialNumber != null && serialNumber.equals(smartphone.serialNumber);
+    }
+
+
+    // se x.equals(y) == true, y.hashCode() == x.hashCode()
+    // y.hashCode() == x.hashCode() não necessariamente o equals de y.quals(x) tem que ser true
+    // x.equals(y) == false
+    // y.hashCode() != x.hashCode() x.equals(y) deverá ser false.
+
+    @Override
+    public int hashCode() {
+        return serialNumber == null  ? 0: this.serialNumber.hashCode();
     }
 
     public String getSerialNumber() {
