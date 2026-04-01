@@ -21,6 +21,7 @@ public class ListTest01 {
 
         System.out.println("----------------");
 
+
         int size = nomes.size();
         for (int i = 0; i < nomes.size(); i++) {
             System.out.println(nomes.get(i));
