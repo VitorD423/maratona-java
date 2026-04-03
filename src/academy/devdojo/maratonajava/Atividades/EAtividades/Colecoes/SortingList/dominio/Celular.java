@@ -63,6 +63,7 @@ public class Celular implements Comparable<Celular> {
 
     @Override
     public int compareTo(Celular celular) {
-        return this.id.compareTo(celular.getId());
+       // return this.id.compareTo(celular.getId());
+        return this.modelo.compareTo(celular.getModelo());
     }
 }
