@@ -1,6 +1,5 @@
 package academy.devdojo.maratonajava.Atividades.EAtividades.Colecoes.SortingList.dominio;
 
-import java.util.Comparator;
 import java.util.Objects;
 
 public class Celular implements Comparable<Celular> {
@@ -64,6 +63,6 @@ public class Celular implements Comparable<Celular> {
     @Override
     public int compareTo(Celular celular) {
        // return this.id.compareTo(celular.getId());
-        return this.modelo.compareTo(celular.getModelo());
+        return this.modelo.compareToIgnoreCase(celular.getModelo());
     }
 }

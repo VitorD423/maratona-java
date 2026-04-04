@@ -27,7 +27,7 @@ class CelularComparableByPreco implements Comparator<Celular>{
 public class CelularTest01 {
     public static void main(String[] args) {
         List<Celular> celular = new ArrayList<>(3);
-        celular.add(new Celular(2L,"Samsung",340));
+        celular.add(new Celular(2L,"samsung",340));
         celular.add(new Celular(1L,"Xiaomi",210));
         celular.add(new Celular(3L,"Apple",500));
         System.out.println("Alfabetica: ");
@@ -51,6 +51,12 @@ public class CelularTest01 {
             System.out.println(celulares);
         }
 
+        System.out.println("-----------------------------");
+        System.out.println("Ordena por preço se empatar ordena por modelo");
+        celular.sort(Comparator.comparing(Celular::getPreco).thenComparing(Celular::getModelo));
+        for (Celular celulares : celular) {
+            System.out.println(celulares);
+        }
 
     }
 }
