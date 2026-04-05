@@ -20,7 +20,8 @@ public class jogadoresTest01 {
 
         jogadores.sort(Comparator.comparing(Jogadores::getGolsMarcados).reversed()
                 .thenComparing(Jogadores::getAssistencias, Comparator.reverseOrder())
-                .thenComparing(Jogadores::getHorasJogadas, Comparator.reverseOrder()).thenComparing(Jogadores::getNome, String.CASE_INSENSITIVE_ORDER));
+                .thenComparing(Jogadores::getHorasJogadas, Comparator.reverseOrder())
+                .thenComparing(Jogadores::getNome, Comparator.nullsLast(String.CASE_INSENSITIVE_ORDER)));
 
 
 
