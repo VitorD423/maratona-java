@@ -18,7 +18,5 @@ public class SetTest01 {
         for (Manga manga : mangas) {
             System.out.println(manga);
         }
-
-
     }
 }
