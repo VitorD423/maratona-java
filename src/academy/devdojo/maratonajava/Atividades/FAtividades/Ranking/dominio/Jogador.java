@@ -6,6 +6,7 @@ public class Jogador implements Comparable<Jogador> {
     private String nome;
     private double pontuacao;
     private Long id;
+    private double horasJogadas;
 
     public Jogador(String nome, double pontuacao) {
         this.nome = nome;
@@ -17,17 +18,40 @@ public class Jogador implements Comparable<Jogador> {
         this.id = id;
     }
 
+
+    public Jogador(String nome, double pontuacao, Long id, double horasJogadas) {
+        this(nome,pontuacao,id);
+        this.horasJogadas = horasJogadas;
+    }
+
     @Override
     public boolean equals(Object o) {
-        if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Jogador jogador = (Jogador) o;
-        return nome != null && nome.equalsIgnoreCase(jogador.nome);
+        return Objects.equals(id, jogador.id);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(nome);
+        return Objects.hashCode(id);
+    }
+
+
+
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public double getHorasJogadas() {
+        return horasJogadas;
+    }
+
+    public void setHorasJogadas(double horasJogadas) {
+        this.horasJogadas = horasJogadas;
     }
 
     @Override
@@ -35,6 +59,8 @@ public class Jogador implements Comparable<Jogador> {
         return "Jogador{" +
                 "nome='" + nome + '\'' +
                 ", pontuacao=" + pontuacao +
+                ", id=" + id +
+                ", horasJogadas=" + horasJogadas +
                 '}';
     }
 
