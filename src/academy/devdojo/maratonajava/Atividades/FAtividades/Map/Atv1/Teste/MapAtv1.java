@@ -3,10 +3,7 @@ package academy.devdojo.maratonajava.Atividades.FAtividades.Map.Atv1.Teste;
 import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Consumidor;
 import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Manga;
 
-import java.util.Collections;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class MapAtv1 {
     public static void main(String[] args) {
@@ -29,9 +26,9 @@ public class MapAtv1 {
         mangaConsumidorMap.put(manga3,consumidorMangas2List);
 
         for (Map.Entry<Manga, List<Consumidor>> entry : mangaConsumidorMap.entrySet()){
-            System.out.println(entry.getKey().getNome());
+            System.out.println("Nome do manga: " + entry.getKey().getNome());
             for (Consumidor consumidor : entry.getValue()){
-                System.out.println(consumidor.getNome());
+                System.out.println("Consumidores: " + consumidor.getNome());
             }
         }
 // computeIfAbsent → garantir que existe
@@ -42,13 +39,22 @@ public class MapAtv1 {
                 contador.merge(entry.getKey(), 1, Integer::sum);
             }
         }
+
         System.out.println("Contagem: ");
+        int max = Collections.max(contador.values());
         for (Map.Entry<Manga, Integer> entry : contador.entrySet()){
-            System.out.println(entry.getKey().getNome() + " - " + entry.getValue());
+            if(entry.getValue() == max){
+            System.out.println("Manga com mais consumidores: " + entry.getKey().getNome() + " - " + entry.getValue());
+            }
         }
 
-        Map.Entry<Manga, Integer> maisPopular = Collections.max(contador.entrySet(), Map.Entry.comparingByValue());
+        List<Map.Entry<Manga, Integer>> lista = new ArrayList<>(contador.entrySet());
+        lista.sort(((e1, e2) -> e2.getValue().compareTo(e1.getValue())));
 
-        System.out.println("Manga mais popular: " + maisPopular.getKey().getNome() + " - " + maisPopular.getValue());
+        int posicao = 1;
+        for (Map.Entry<Manga, Integer> entry : lista){
+            System.out.println("Ranking: " + posicao + "º - " + entry.getKey().getNome() + " - " + entry.getValue());
+            posicao++;
+        }
     }
 }
