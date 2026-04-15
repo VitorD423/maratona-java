@@ -22,10 +22,7 @@ public class BinarySearchTest02 {
             System.out.println(manga);
         }
 
-    Manga mangaToSearch = new Manga(2L,"Dragon ball Z",2.99);
+    Manga mangaToSearch = new Manga(10L,"Dragon ball Z",2.99);
         System.out.println(Collections.binarySearch(mangas, mangaToSearch,mangaByIdComparator));
-
-
-
     }
 }
