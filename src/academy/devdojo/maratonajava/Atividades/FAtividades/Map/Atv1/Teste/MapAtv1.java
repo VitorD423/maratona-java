@@ -3,6 +3,7 @@ package academy.devdojo.maratonajava.Atividades.FAtividades.Map.Atv1.Teste;
 import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Consumidor;
 import academy.devdojo.maratonajava.javacore.Ycolecoes.dominio.Manga;
 
+import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,6 +36,19 @@ public class MapAtv1 {
         }
 // computeIfAbsent → garantir que existe
 // merge → atualizar o valor
+        Map<Manga, Integer> contador = new HashMap<>();
+        for (Map.Entry<Manga, List<Consumidor>> entry : mangaConsumidorMap.entrySet()){
+            for (Consumidor consumidor : entry.getValue()){
+                contador.merge(entry.getKey(), 1, Integer::sum);
+            }
+        }
+        System.out.println("Contagem: ");
+        for (Map.Entry<Manga, Integer> entry : contador.entrySet()){
+            System.out.println(entry.getKey().getNome() + " - " + entry.getValue());
+        }
 
+        Map.Entry<Manga, Integer> maisPopular = Collections.max(contador.entrySet(), Map.Entry.comparingByValue());
+
+        System.out.println("Manga mais popular: " + maisPopular.getKey().getNome() + " - " + maisPopular.getValue());
     }
 }
