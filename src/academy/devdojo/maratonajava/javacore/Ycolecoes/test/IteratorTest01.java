@@ -15,13 +15,13 @@ public class IteratorTest01 {
         mangas.add(new Manga(3L,"Attack on titan",11.20,2));
         mangas.add(new Manga(2L,"Dragon ball Z",2.99,0));
 
-        Iterator<Manga> mangaIterator = mangas.iterator();
-        while (mangaIterator.hasNext()){
-            Manga manga = mangaIterator.next();
-            if (manga.getQuantidade() == 0){
-                mangaIterator.remove();
-            }
-        }
+//        Iterator<Manga> mangaIterator = mangas.iterator();
+//        while (mangaIterator.hasNext()){
+//            Manga manga = mangaIterator.next();
+//            if (manga.getQuantidade() == 0){
+//                mangaIterator.remove();
+//            }
+//        }
 
         mangas.removeIf(manga -> manga.getQuantidade() == 0);
         System.out.println(mangas);
