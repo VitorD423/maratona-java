@@ -23,7 +23,7 @@ public class IteratorTest01 {
 //            }
 //        }
 
-        mangas.removeIf(manga -> manga.getQuantidade() == 0);
+        mangas.removeIf(manga -> manga.getQuantidade() == 2);
         System.out.println(mangas);
 
     }
