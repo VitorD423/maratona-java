@@ -17,6 +17,7 @@ public class MapTest03 {
         Manga manga3 = new Manga(4L,"Pokemon",3.2);
         Manga manga4 = new Manga(3L,"Attack on titan",11.20);
         Manga manga5 = new Manga(2L,"Dragon ball Z",2.99);
+        Manga manga6 = new Manga(6L,"DandaDan",2.99);
 
         List<Manga> mangaConsumidor1List = List.of(manga1,manga2,manga3);
         List<Manga> mangaConsumidor2List = List.of(manga3,manga4);
