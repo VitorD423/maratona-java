@@ -21,7 +21,9 @@ public class MapAtv1 {
 
         List<Consumidor> consumidorMangas1List = List.of(consumidor1,consumidor3,consumidor4);
         List<Consumidor> consumidorMangas2List = List.of(consumidor2,consumidor5);
+
         Map<Manga, List<Consumidor>> mangaConsumidorMap = new HashMap<>();
+
         mangaConsumidorMap.put(manga5,consumidorMangas1List);
         mangaConsumidorMap.put(manga3,consumidorMangas2List);
 
