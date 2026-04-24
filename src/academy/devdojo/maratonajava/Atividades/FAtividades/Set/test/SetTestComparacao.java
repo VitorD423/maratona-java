@@ -31,7 +31,15 @@ public class SetTestComparacao {
             System.out.println(manga);
         }
 
+        System.out.println("LinkedHashSet");
+        for (Manga manga : linkedHashSet) {
+            System.out.println(manga);
+        }
 
+        System.out.println("TreeSet (ordenado por preço)");
+        for (Manga manga : treeSet) {
+            System.out.println(manga);
+        }
 
 
     }
