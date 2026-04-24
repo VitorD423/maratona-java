@@ -21,8 +21,8 @@ public class SistemaRankingTest {
                         .thenComparing(Jogador::getHorasJogadas, Comparator.reverseOrder()).
                 thenComparing(Jogador::getNome, String.CASE_INSENSITIVE_ORDER)
                 .thenComparing(Jogador::getId);
-        jogadores.sort(comparator);
         jogadores.removeIf(jogador -> jogador.getPontuacao() == 0);
+        jogadores.sort(comparator);
 
         int limite = Math.min(3, jogadores.size());
 
