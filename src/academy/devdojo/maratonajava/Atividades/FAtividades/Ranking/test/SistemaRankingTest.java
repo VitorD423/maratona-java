@@ -24,6 +24,7 @@ public class SistemaRankingTest {
         jogadores.removeIf(jogador -> jogador.getPontuacao() == 0);
         jogadores.sort(comparator);
 
+        
         int limite = Math.min(3, jogadores.size());
 
         System.out.println("Top " + limite + ":");
