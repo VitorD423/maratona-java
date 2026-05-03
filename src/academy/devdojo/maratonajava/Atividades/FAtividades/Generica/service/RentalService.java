@@ -1,10 +1,9 @@
-package academy.devdojo.maratonajava.javacore.Zgenerics.service;
-
-import academy.devdojo.maratonajava.javacore.Zgenerics.dominio.Carro;
+package academy.devdojo.maratonajava.Atividades.FAtividades.Generica.service;
 
 import java.util.List;
 
 public class RentalService<T> {
+
     private List<T> objetosDisponiveis;
 
     public RentalService(List<T> objetosDisponiveis) {

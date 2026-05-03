@@ -18,7 +18,7 @@ class Cachorro extends Animal {
 
     @Override
     public void consulta() {
-        System.out.println("Consultando cachorro");
+        System.out.println("Consultando cachorro : " + this.raca + " Idade: " + idade);
     }
 }
 
