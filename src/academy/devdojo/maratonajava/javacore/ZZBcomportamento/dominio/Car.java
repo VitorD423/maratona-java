@@ -10,6 +10,15 @@ public class Car {
         this.year = year;
     }
 
+    @Override
+    public String toString() {
+        return "Car{" +
+                "name='" + name + '\'' +
+                ", color='" + color + '\'' +
+                ", year=" + year +
+                '}';
+    }
+
     public String getName() {
         return name;
     }
