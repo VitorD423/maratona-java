@@ -12,7 +12,8 @@ public class personagemTest01 {
             new Personagem("Diego",15,"Arqueiro"),
             new Personagem("Actor",30,"Guerreiro"),
             new Personagem("Gabriel",52,"Clérigo"),
-            new Personagem("Lucas",41,"Druida"));
+            new Personagem("Lucas",41,"Druida"),
+            new Personagem("Dalite",70,"Sacanagem"));
 
     public static void main(String[] args) {
         List<Personagem> maiorQue50 = filter(personagens,personagens -> personagens.getNivel() > 50 );
