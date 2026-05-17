@@ -2,7 +2,6 @@ package academy.devdojo.maratonajava.javacore.ZZDoptional.test;
 
 import java.util.List;
 import java.util.Optional;
-import java.util.function.Consumer;
 
 public class OptionalTest01 {
     public static void main(String[] args) {
