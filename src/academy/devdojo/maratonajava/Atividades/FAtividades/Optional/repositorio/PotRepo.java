@@ -10,7 +10,8 @@ public class PotRepo {
     private static List<Pocao> pocaos = List.of(
             new Pocao(1, "Poção Pequena", 50),
             new Pocao(2, "Poção Média", 150),
-            new Pocao(3, "Poção Grande", 300)
+            new Pocao(3, "Poção Grande", 300),
+            new Pocao(5, "Poção GGrande", 300)
     );
 
     public static Optional<Pocao> findById(Integer id){
