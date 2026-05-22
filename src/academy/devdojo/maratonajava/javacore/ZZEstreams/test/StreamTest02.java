@@ -24,5 +24,7 @@ public class StreamTest02 {
                 .limit(3).map(LightNovel::getTitle).collect(Collectors.toList());
 
         System.out.println(titles);
+
+
     }
 }
