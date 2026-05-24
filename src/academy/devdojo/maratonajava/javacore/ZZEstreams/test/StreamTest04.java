@@ -9,7 +9,7 @@ public class StreamTest04 {
         List<List<String>> devdojo = new ArrayList<>();
         List<String> graphicDesigners = List.of("Wildenei suane","Catarina Santos","Sandy Carolina");
         List<String> developers = List.of("William","David","Harisson");
-        List<String> students = List.of("Édipo", "Gustavo Lima","Gustavo Mendes", "Guilherme");
+        List<String> students = List.of("Édipo", "Gustavo Lima","Gustavo Mendes", "Guilherme","BomBo");
         devdojo.add(graphicDesigners);
         devdojo.add(developers);
         devdojo.add(students);
