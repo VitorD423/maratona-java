@@ -21,5 +21,8 @@ public class flatMapTest01 {
 
         }
 
+        System.out.println("----------------");
+        guildas.stream().flatMap(List::stream).forEach(System.out::println);
+
     }
 }
