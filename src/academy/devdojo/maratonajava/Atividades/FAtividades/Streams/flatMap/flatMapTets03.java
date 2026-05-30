@@ -18,14 +18,20 @@ public class flatMapTets03 {
         inventarios.add(bolsa3);
 
 
-
+//
 
         inventarios.stream().flatMap(List::stream).forEach(System.out::println);
         System.out.println();
-        List<String> l1 = bolsa1.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
-        List<String> l2 = bolsa2.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
-        List<String> l3 = bolsa3.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+//        List<String> l1 = bolsa1.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+//        List<String> l2 = bolsa2.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+//        List<String> l3 = bolsa3.stream().map(w -> w.split("")).flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+//
+//        System.out.println("Bolsa 1: " + l1 +" Bolsa 2: "+ l2 +" Bolsa 3: "+ l3);
 
-        System.out.println("Bolsa 1: " + l1 +" Bolsa 2: "+ l2 +" Bolsa 3: "+ l3);
+        List<String> letras = inventarios.stream()
+                .flatMap(List::stream).map(item -> item.split(""))
+                .flatMap(Arrays::stream).distinct().collect(Collectors.toList());
+
+        System.out.println(letras);
     }
 }
