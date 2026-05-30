@@ -14,5 +14,7 @@ public class flatMapTets03 {
         inventarios.add(bolsa1);
         inventarios.add(bolsa2);
         inventarios.add(bolsa3);
+
+        inventarios.stream().flatMap(List::stream).forEach(System.out::println);
     }
 }
