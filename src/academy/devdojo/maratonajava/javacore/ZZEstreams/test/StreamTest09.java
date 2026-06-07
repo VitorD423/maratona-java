@@ -1,5 +1,6 @@
 package academy.devdojo.maratonajava.javacore.ZZEstreams.test;
 
+import java.util.Arrays;
 import java.util.stream.IntStream;
 import java.util.stream.Stream;
 
@@ -13,5 +14,8 @@ public class StreamTest09 {
         Stream.of("Eleve "," O"," Cosmo"," no seu coração")
                 .map(String::toUpperCase)
                 .forEach(s -> System.out.println(s +" "));
+
+        int num[] = {1,2,3,4,5};
+        Arrays
     }
 }
