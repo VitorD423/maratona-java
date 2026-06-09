@@ -19,7 +19,7 @@ public class PathTest02 {
         Path subPastaDirectory = Files.createDirectories(subPastaPath);
         //Ele vai criar as pastas pais caso elas não existam
 
-        Path filePath = Paths.get(subPastaPath.toString(),"file.txt");
+        Path filePath = Paths.get(subPastaPath.toString(), "file.txt");
 
         if (Files.notExists(filePath)){
         Path filePathCreated = Files.createFile(filePath);
