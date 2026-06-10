@@ -16,13 +16,14 @@ public class StreamTest09 {
 
         Stream.of("Eleve "," O"," Cosmo"," no seu coração")
                 .map(String::toUpperCase)
-                .forEach(s -> System.out.println(s +" "));
+                .forEach(s -> System.out.print(s +" "));
         System.out.println();
 
         int num[] = {1,2,3,4,5};
         Arrays.stream(num)
                 .average()
                 .ifPresent(System.out::println);
+
         try(Stream<String> lines = Files.lines(Paths.get("file.txt"))){
             lines.filter(l -> l.contains("Java"))
                     .forEach(System.out::println);
