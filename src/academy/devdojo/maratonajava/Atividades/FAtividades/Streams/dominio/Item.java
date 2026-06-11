@@ -2,7 +2,8 @@ package academy.devdojo.maratonajava.Atividades.FAtividades.Streams.dominio;
 
 public class Item {
     private String nome;
-    private int valor;
+    private double valor;
+    private String tipo;
 
 
     public Item(String nome, int valor) {
@@ -10,13 +11,24 @@ public class Item {
         this.valor = valor;
     }
 
+    public Item(String nome, double valor, String tipo) {
+        this.nome = nome;
+        this.valor = valor;
+        this.tipo = tipo;
+    }
+
+    public String getTipo() {
+        return tipo;
+    }
+
     public String getNome() {
         return nome;
     }
 
-    public int getValor() {
+    public double getValor() {
         return valor;
     }
+
 
     @Override
     public String toString() {

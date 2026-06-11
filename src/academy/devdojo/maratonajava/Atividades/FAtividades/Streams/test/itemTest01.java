@@ -15,8 +15,8 @@ public class itemTest01 {
                 new Item("Katana", 300)
         );
 
-        int total = itens.stream().map(Item::getValor)
-                .reduce(0,Integer::sum);
+        Double total = itens.stream().map(Item::getValor)
+                .reduce(Double.valueOf(0),Double::sum);
         System.out.println(total);
 
         System.out.println("----------------------");
@@ -31,7 +31,7 @@ public class itemTest01 {
 
         System.out.println("----------------------");
 
-        long multiplicar = itens.stream().map(Item::getValor).mapToLong(Integer::longValue)
+        long multiplicar = itens.stream().map(Item::getValor).mapToLong(Double::longValue)
                 .reduce(1,(n1,n2) -> n1 * n2);
         System.out.println(multiplicar);
     }
