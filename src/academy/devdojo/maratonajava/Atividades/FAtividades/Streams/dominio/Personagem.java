@@ -5,6 +5,7 @@ public class Personagem {
     private String classe;
     private int nivel;
 
+
     public Personagem(String nome, String classe, int nivel) {
         this.nome = nome;
         this.classe = classe;
