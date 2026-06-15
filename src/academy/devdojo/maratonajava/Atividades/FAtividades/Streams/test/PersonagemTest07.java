@@ -20,12 +20,13 @@ public class PersonagemTest07 {
         System.out.println();
 
         System.out.println("Tarefa B");
+        System.out.println("Tarefa B");
         System.out.println("Calcule a média dos níveis de todos os personagens.");
         double media = personagens.stream().mapToInt(Personagem::getNivel).average().orElse(0.0);
         System.out.println(media);
         System.out.println();
 
-        System.out.println("Tarefa C");
+        System.out.println("Tarefa C" );
         System.out.println("Descubra qual classe possui mais personagens.");
         Map<String, Long> cou = personagens.stream().collect(Collectors.groupingBy(Personagem::getClasse, Collectors.counting()));
         System.out.println(cou.entrySet().map);
