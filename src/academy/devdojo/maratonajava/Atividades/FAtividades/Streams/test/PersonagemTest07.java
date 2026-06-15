@@ -19,7 +19,7 @@ public class PersonagemTest07 {
         System.out.println(string);
         System.out.println();
 
-        System.out.println("Tarefa B");
+
         System.out.println("Tarefa B");
         System.out.println("Calcule a média dos níveis de todos os personagens.");
         double media = personagens.stream().mapToInt(Personagem::getNivel).average().orElse(0.0);
