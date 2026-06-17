@@ -4,7 +4,7 @@ public class Item {
     private String nome;
     private double valor;
     private String tipo;
-
+    private FaixaPreco faixaPreco;
 
     public Item(String nome, int valor) {
         this.nome = nome;
@@ -15,6 +15,13 @@ public class Item {
         this.nome = nome;
         this.valor = valor;
         this.tipo = tipo;
+    }
+
+    public Item(String nome, double valor, String tipo, FaixaPreco faixaPreco) {
+        this.nome = nome;
+        this.valor = valor;
+        this.tipo = tipo;
+        this.faixaPreco = faixaPreco;
     }
 
     public String getTipo() {
@@ -29,12 +36,17 @@ public class Item {
         return valor;
     }
 
+    public FaixaPreco getFaixaPreco() {
+        return faixaPreco;
+    }
 
     @Override
     public String toString() {
         return "Item{" +
                 "nome='" + nome + '\'' +
                 ", valor=" + valor +
+                ", tipo='" + tipo + '\'' +
+                ", faixaPreco=" + faixaPreco +
                 '}';
     }
 }

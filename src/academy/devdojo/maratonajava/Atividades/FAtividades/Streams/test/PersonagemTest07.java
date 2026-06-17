@@ -29,7 +29,8 @@ public class PersonagemTest07 {
         System.out.println("Tarefa C" );
         System.out.println("Descubra qual classe possui mais personagens.");
         Map<String, Long> cou = personagens.stream().collect(Collectors.groupingBy(Personagem::getClasse, Collectors.counting()));
-        System.out.println(cou.entrySet().map);
+        cou.entrySet().stream().max(Map.Entry.comparingByValue()).ifPresent(System.out::println);
+        System.out.println();
 
         System.out.println("Tarefa D");
         System.out.println("Agrupe os personagens por classe");
@@ -42,5 +43,6 @@ public class PersonagemTest07 {
         Map<String, Map<Nivelacao, List<Personagem>>> collect1 = personagens.stream().collect(Collectors.groupingBy(Personagem::getClasse,
                 Collectors.groupingBy(ln -> ln.getNivel() < 50 ? Nivelacao.BAIXO : ln.getNivel() < 80 ? Nivelacao.MEDIO : Nivelacao.ALTO)));
         System.out.println(collect1);
+
     }
 }
