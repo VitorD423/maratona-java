@@ -34,4 +34,5 @@ public class StreamTest13 {
 
         System.out.println(collect1);
     }
+    private static Promotion getPromotion(LightNovel ln) {return ln.getPrice() < 6 ? Promotion.UNDER_PROMOTION : Promotion.NORMAL_PRICE;}
 }
