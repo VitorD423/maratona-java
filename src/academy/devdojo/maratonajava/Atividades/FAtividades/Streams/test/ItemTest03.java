@@ -18,6 +18,7 @@ public class ItemTest03 {
                 new Item("Adaga",120,"Arma"),
                 new Item("Maçã",10,"Comida")
         );
+
         System.out.println("A");
         itens.stream().filter(item -> item.getValor() > 100).map(Item::getNome).forEach(System.out::println);
         System.out.println();
