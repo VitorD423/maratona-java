@@ -24,6 +24,7 @@ public class StreamTest16 {
         sumLongStreamIterate(num);
         sumParallelLongStreamIterate(num);
 
+
     }
 
     private static void sumFor(long num){
