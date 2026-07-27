@@ -24,25 +24,20 @@ public class StreamTest15 {
             ));
 
     public static void main(String[] args) {
-        Map<Category, DoubleSummaryStatistics> collect = lightNovels.stream().collect(Collectors
-                .groupingBy(LightNovel::getCategory, Collectors.summarizingDouble(LightNovel::getPrice)));
+        Map<Category, DoubleSummaryStatistics> collect = lightNovels.stream().collect(groupingBy(LightNovel::getCategory, summarizingDouble(LightNovel::getPrice)));
         System.out.println(collect);
-        System.out.println();
+        // Map<Category, List<Promotion>>
+        Map<Category, List<Promotion>> collect1 = lightNovels.stream().
+                collect(groupingBy(LightNovel::getCategory, mapping(StreamTest15::getPromotion, toList())));
 
-        Map<Category, Set<Promotion>> collect1 = lightNovels.stream().collect(groupingBy
-                (LightNovel::getCategory, mapping(StreamTest15::getPromotion, toSet())));
         System.out.println(collect1);
-        //LinkedHashSet
 
-        Map<Category, LinkedHashSet<Promotion>> collect2 = lightNovels.stream().collect(groupingBy
-                (LightNovel::getCategory, mapping(StreamTest15::getPromotion,
+        Map<Category, LinkedHashSet<Promotion>> collect2 = lightNovels.stream().
+                collect(groupingBy(LightNovel::getCategory, mapping(StreamTest15::getPromotion,
                         toCollection(LinkedHashSet::new))));
         System.out.println(collect2);
-    }
 
-    private static Promotion getPromotion(LightNovel ln)
-    {
-        return ln.getPrice() < 6 ? UNDER_PROMOTION : NORMAL_PRICE;
-    }
 
+    }
+        private static Promotion getPromotion(LightNovel ln) {return ln.getPrice() < 6 ? Promotion.UNDER_PROMOTION : Promotion.NORMAL_PRICE;}
 }
