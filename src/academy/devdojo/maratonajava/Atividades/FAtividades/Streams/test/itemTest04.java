@@ -18,6 +18,7 @@ public class itemTest04 {
                 new Item("Adaga", 120, "Arma"),
                 new Item("Maçã", 10, "Comida"),
                 new Item("Carne", 80, "Comida")
+
         );
 
         System.out.println("Mostre apenas os nomes dos itens que custam mais de 100, em ordem alfabética.");
