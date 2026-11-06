@@ -6,6 +6,7 @@ Esta pasta reúne arquivos utilizados nos exercícios de manipulação de arquiv
 
 - `subpasta1/subsubpasta1/`: arquivos de texto usados como origem no exercício de compactação.
 - `arquivo.zip`: arquivo compactado gerado pelo exercício.
+- `meuarquivo.zip`: outro arquivo ZIP usado como exemplo nos estudos.
 - `descompactado/`: destino utilizado pelo exercício de extração do ZIP.
 
 As classes relacionadas estão em `src/academy/devdojo/maratonajava/javacore/Wnio/test/`.
