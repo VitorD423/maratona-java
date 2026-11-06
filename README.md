@@ -32,3 +32,7 @@ A ideia é praticar, revisar o conteúdo e acompanhar minha evolução como dese
 - Expressões Lambda e Method References
 - Optional
 - Stream API e Collectors
+
+## Anotações
+
+Além dos códigos, o repositório possui [anotações de estudo](Anota%C3%A7%C3%B5es/Readme) com explicações e exemplos de alguns assuntos.
