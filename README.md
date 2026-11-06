@@ -10,15 +10,25 @@ A ideia é praticar, revisar o conteúdo e acompanhar minha evolução como dese
 
 - Fundamentos da linguagem Java
 - Variáveis, operadores e estruturas de controle
-- Métodos, construtores e encapsulamento
+- Métodos, parâmetros e sobrecarga de métodos
+- Construtores e blocos de inicialização
+- Modificadores `static` e `final`
+- Encapsulamento (getters e setters)
 - Programação Orientada a Objetos
-- Herança e polimorfismo
+- Associação entre classes
+- Herança, sobrescrita e polimorfismo
 - Classes abstratas, interfaces e enums
 - Tratamento de exceções
-- Wrappers e manipulação de Strings
-- Datas e horários com a API Date/Time
+- Classes Wrapper e manipulação de Strings
+- Formatação de Strings e expressões regulares (Regex)
+- Datas e horários com as APIs Date e Time
+- Internacionalização com ResourceBundle
 - Manipulação de arquivos (IO e NIO)
+- Serialização
 - Collections e Maps
 - Generics e Wildcards
-- Classes internas e anônimas
+- Classes internas, locais e anônimas
+- Comportamento de objetos na passagem de parâmetros
+- Expressões Lambda e Method References
+- Optional
 - Stream API e Collectors
