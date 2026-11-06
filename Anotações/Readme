@@ -1,1 +1,17 @@
+# Anotações de Java
 
+Esta pasta reúne resumos e exemplos que escrevi durante os estudos de Java. A ideia é servir como material de consulta rápida junto aos códigos do repositório.
+
+## Índice
+
+- [Associação entre classes](Associação)
+- [Construtores](CONSTRUCTORES)
+- [Getters e Setters](GET%20E%20SETTERS)
+- [Blocos de inicialização](INICIALIZAÇÃO)
+- [Métodos](METODOS)
+- [Sobrecarga de métodos](SOBRECARGA%20DE%20MÉTODOS)
+- [Modificador static](STATIC)
+
+Os exemplos também podem ser encontrados nas respectivas pastas dentro de `src/academy/devdojo/maratonajava/javacore/`.
+
+Essas anotações são resumos de estudo. Para entender o contexto completo, consulte também os exercícios e as classes de teste do projeto.
