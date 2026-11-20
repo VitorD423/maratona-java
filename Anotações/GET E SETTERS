@@ -1,11 +1,40 @@
 # Getters e Setters em Java
 
-Getters e Setters são métodos usados para acessar e modificar valores de atributos privados dentro de uma classe. Como a boa prática da orientação a objetos recomenda que os atributos sejam privados, esses métodos servem como uma forma controlada de ler e alterar esses valores, mantendo a segurança e o encapsulamento do objeto.
+Getters e Setters são métodos utilizados para acessar e modificar os atributos de uma classe.
 
-O Getter é responsável por retornar o valor de um atributo. Ele apenas entrega a informação, sem permitir alterações. Já o Setter serve para modificar o valor de um atributo, permitindo validar ou controlar o que pode ou não ser colocado dentro dele. Esse controle evita que o objeto receba valores inválidos ou inconsistentes.
+Na programação orientada a objetos, é comum declarar os atributos como `private`, impedindo que outras classes acessem esses dados diretamente. Os Getters e Setters permitem controlar esse acesso, mantendo o encapsulamento.
 
-Exemplo de uso:
+## Getter
 
+O Getter é um método responsável por retornar o valor de um atributo.
+
+Exemplo:
+
+```java
+public String getNome() {
+    return nome;
+}
+```
+
+Nesse caso, o método `getNome()` retorna o valor armazenado no atributo `nome`.
+
+## Setter
+
+O Setter é utilizado para modificar o valor de um atributo.
+
+Exemplo:
+
+```java
+public void setNome(String nome) {
+    this.nome = nome;
+}
+```
+
+O parâmetro recebido é atribuído ao atributo da própria classe por meio de `this`.
+
+## Exemplo prático
+
+```java
 public class Carro {
     private String nome;
     private double velocidadeMaxima;
@@ -15,7 +44,9 @@ public class Carro {
     }
 
     public void setNome(String nome) {
-        this.nome = nome;
+        if (nome != null && !nome.isBlank()) {
+            this.nome = nome;
+        }
     }
 
     public double getVelocidadeMaxima() {
@@ -23,8 +54,40 @@ public class Carro {
     }
 
     public void setVelocidadeMaxima(double velocidadeMaxima) {
-        this.velocidadeMaxima = velocidadeMaxima;
+        if (velocidadeMaxima > 0) {
+            this.velocidadeMaxima = velocidadeMaxima;
+        }
     }
 }
+```
 
-Ao usar getters e setters, conseguimos proteger os dados internos da classe e garantir que o objeto seja manipulado de forma segura e consistente. Eles são fundamentais para manter o encapsulamento e são amplamente usados na maioria dos projetos Java, inclusive em frameworks como Spring.
+Nesse exemplo, os Setters possuem algumas validações:
+
+- O nome não pode ser nulo ou vazio.
+- A velocidade máxima precisa ser maior que zero.
+
+Assim, evitamos que o objeto receba alguns valores inválidos.
+
+## Utilizando os métodos
+
+```java
+public class CarroTest {
+    public static void main(String[] args) {
+        Carro carro = new Carro();
+
+        carro.setNome("BMW");
+        carro.setVelocidadeMaxima(250);
+
+        System.out.println(carro.getNome());
+        System.out.println(carro.getVelocidadeMaxima());
+    }
+}
+```
+
+Primeiro utilizamos os Setters para definir os valores dos atributos. Depois, usamos os Getters para recuperar essas informações.
+
+## Conclusão
+
+Getters e Setters ajudam a manter o encapsulamento, permitindo controlar como os atributos de uma classe são acessados e modificados.
+
+É importante lembrar que nem todo atributo precisa obrigatoriamente ter Getter e Setter. Devemos disponibilizar apenas os métodos necessários, de acordo com as regras e responsabilidades da classe.
