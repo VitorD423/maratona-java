@@ -1,24 +1,42 @@
 # Blocos de Inicialização em Java
 
-Blocos de inicialização são trechos de código dentro de chaves `{ }` que executam automaticamente toda vez que um objeto é criado, antes do construtor. Eles são úteis quando você precisa preparar valores, preencher listas, arrays ou fazer configurações iniciais que devem ocorrer independentemente de qual construtor for chamado.
+Blocos de inicialização são trechos de código delimitados por chaves `{ }`, utilizados para executar instruções durante a inicialização de uma classe ou de um objeto.
 
-A ordem de execução ao criar um objeto é sempre:
-1. Espaço em memória é alocado.
-2. Atributos recebem valores default (ou valores definidos diretamente).
-3. O bloco de inicialização é executado.
-4. O construtor é chamado.
+Na linguagem Java, existem dois tipos principais:
 
-No exemplo abaixo, o bloco de inicialização cria um array de 100 episódios e preenche cada posição automaticamente, evitando duplicação de código nos construtores:
+- **Bloco de inicialização de instância:** executado toda vez que um objeto é criado.
+- **Bloco de inicialização estático (`static`):** executado uma única vez, quando a classe é inicializada.
 
-package academy.devdojo.maratonajava.javacore.Eblocosinicializacao.dominio;
+## Bloco de inicialização de instância
 
+Esse bloco é executado antes do corpo do construtor. Ele é útil quando precisamos realizar uma inicialização que deve acontecer independentemente do construtor utilizado.
+
+### Ordem de execução
+
+De maneira simplificada, ao criar um objeto, acontece o seguinte:
+
+1. A memória do objeto é alocada.
+2. Os atributos recebem seus valores padrão, como `null`, `0` ou `false`.
+3. A inicialização da superclasse acontece.
+4. Os atributos de instância e os blocos de inicialização são executados na ordem em que aparecem no código.
+5. O corpo do construtor é executado.
+
+**Importante:** inicializadores de atributos e blocos de instância seguem a ordem em que são declarados no código, e não uma ordem fixa entre eles.
+
+## Exemplo prático
+
+No exemplo abaixo, utilizamos um bloco de inicialização para criar um array de 100 episódios e preencher suas posições automaticamente.
+
+```java
 public class Anime {
     private String nome;
     private int[] episodios;
 
     {
         System.out.println("Dentro do bloco de inicialização");
+
         episodios = new int[100];
+
         for (int i = 0; i < episodios.length; i++) {
             episodios[i] = i + 1;
         }
@@ -29,10 +47,7 @@ public class Anime {
     }
 
     public Anime() {
-        for (int episodio : this.episodios) {
-            System.out.print(episodio + " ");
-        }
-        System.out.println();
+        System.out.println("Dentro do construtor sem parâmetros");
     }
 
     public String getNome() {
@@ -43,20 +58,51 @@ public class Anime {
         return episodios;
     }
 }
+```
 
-Já no teste, apenas criamos o objeto e imprimimos os episódios. O bloco garante que o array foi preenchido mesmo antes do construtor rodar:
+Observe que o array é criado e preenchido no bloco de inicialização. Dessa forma, não precisamos repetir esse código em cada construtor.
 
-package academy.devdojo.maratonajava.javacore.Eblocosinicializacao.test;
+## Classe de teste
 
-import academy.devdojo.maratonajava.javacore.Eblocosinicializacao.dominio.Anime;
-
+```java
 public class AnimeTest01 {
     public static void main(String[] args) {
-        Anime anime = new Anime("One Piece");
-        for (int episodio : anime.getEpisodios()) {
+        Anime anime1 = new Anime("One Piece");
+
+        for (int episodio : anime1.getEpisodios()) {
             System.out.print(episodio + " ");
         }
+
+        System.out.println();
+
+        Anime anime2 = new Anime();
     }
 }
+```
 
-Os blocos de inicialização são raramente usados no dia a dia, mas são ótimos para entender a ordem de execução e como preparar dados iniciais de um objeto sem depender dos construtores.
+Ao executar o programa, podemos perceber que o bloco de inicialização é executado nas duas criações de objetos, independentemente do construtor utilizado.
+
+## Bloco de inicialização static
+
+Também existem blocos de inicialização estáticos. Eles são declarados utilizando a palavra-chave `static` e executados uma única vez durante a inicialização da classe.
+
+Exemplo:
+
+```java
+public class Anime {
+    private static int quantidadeMaxima;
+
+    static {
+        System.out.println("Bloco static executado");
+        quantidadeMaxima = 100;
+    }
+}
+```
+
+Diferentemente do bloco de instância, o bloco `static` pertence à classe, e não a cada objeto criado.
+
+## Conclusão
+
+Blocos de inicialização permitem executar instruções durante a inicialização de classes e objetos.
+
+Embora não sejam tão comuns no desenvolvimento cotidiano, são importantes para compreender a ordem de inicialização no Java e como os atributos recebem seus valores antes da execução dos construtores.
