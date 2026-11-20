@@ -1,71 +1,82 @@
-# Uso do static em Java – Exemplo com Carro
+# Modificador static em Java
 
-O modificador `static` é usado quando um atributo ou método pertence à classe, e não a um objeto específico. Isso significa que o membro é compartilhado pelas instâncias da classe.
+O modificador `static` indica que um atributo ou método pertence à classe, e não a uma instância específica.
 
-Neste exemplo, a classe `Carro` possui atributos de instância, como `nome` e `velocidadeMaxima`, que podem ter valores diferentes em cada objeto. Já `velocidadeLimite` é `static`, pois representa uma regra comum a todos os carros.
+Isso significa que os membros estáticos podem ser acessados diretamente pelo nome da classe, sem precisar criar um objeto.
 
-## Classe Carro
+## Atributos estáticos e de instância
+
+Atributos de instância possuem valores próprios em cada objeto. Já os atributos `static` são compartilhados por todas as instâncias da classe.
+
+Exemplo com a classe `Carro`:
 
 ```java
-package academy.devdojo.maratonajava.javacore.Fmodificadorestatico.dominio;
-
 public class Carro {
     private String nome;
     private double velocidadeMaxima;
     private static double velocidadeLimite = 250;
-
-    public Carro(String nome, double velocidadeMaxima) {
-        this.nome = nome;
-        this.velocidadeMaxima = velocidadeMaxima;
-    }
-
-    public void imprime() {
-        System.out.println("----------------");
-        System.out.println("Nome " + this.nome);
-        System.out.println("Velocidade máxima " + this.velocidadeMaxima);
-        System.out.println("Velocidade limite " + Carro.velocidadeLimite);
-    }
-
-    public static void setVelocidadeLimite(double velocidadeLimite) {
-        Carro.velocidadeLimite = velocidadeLimite;
-    }
-
-    public static double getVelocidadeLimite() {
-        return Carro.velocidadeLimite;
-    }
 }
 ```
 
-O atributo `velocidadeLimite` é `static` porque não depende das características de um carro específico. Quando esse valor é alterado, todos os objetos da classe passam a compartilhar o novo limite.
+Nesse exemplo:
 
-Os métodos `setVelocidadeLimite` e `getVelocidadeLimite` também são `static`, pois acessam um atributo que pertence à classe. Um método estático não pode acessar diretamente atributos de instância, já que não existe um objeto específico associado à sua execução.
+- `nome` e `velocidadeMaxima` pertencem a cada carro.
+- `velocidadeLimite` pertence à classe e é compartilhado por todos os carros.
 
-## Classe de teste
+Se o limite for alterado, todos os objetos passam a utilizar o novo valor.
 
-O valor do limite é alterado antes mesmo da criação dos objetos. Isso mostra que não é necessário instanciar a classe para acessar seus membros estáticos.
+## Métodos estáticos
+
+Métodos `static` também pertencem à classe e podem ser chamados sem criar uma instância.
 
 ```java
-package academy.devdojo.maratonajava.javacore.Fmodificadorestatico.test;
+public static void setVelocidadeLimite(double velocidadeLimite) {
+    Carro.velocidadeLimite = velocidadeLimite;
+}
 
-import academy.devdojo.maratonajava.javacore.Fmodificadorestatico.dominio.Carro;
-
-public class CarroTest01 {
-    public static void main(String[] args) {
-        Carro.setVelocidadeLimite(180);
-
-        Carro c1 = new Carro("BMW", 280);
-        Carro c2 = new Carro("Mercedes", 275);
-        Carro c3 = new Carro("Audi", 290);
-
-        c1.imprime();
-        c2.imprime();
-        c3.imprime();
-    }
+public static double getVelocidadeLimite() {
+    return Carro.velocidadeLimite;
 }
 ```
 
-## Quando usar static?
+Podemos chamar esses métodos diretamente:
 
-O modificador `static` é útil para valores compartilhados, constantes e métodos que não dependem do estado individual de um objeto. Já os atributos que representam características próprias de cada instância devem continuar sendo atributos de instância.
+```java
+Carro.setVelocidadeLimite(180);
 
-Neste exemplo, cada carro tem seu próprio nome e sua própria velocidade máxima, mas todos compartilham o mesmo limite de velocidade.
+System.out.println(Carro.getVelocidadeLimite());
+```
+
+## Limitação dos métodos static
+
+Um método estático não consegue acessar diretamente atributos ou métodos de instância.
+
+Isso acontece porque ele pertence à classe e não está associado a um objeto específico.
+
+Por exemplo, um método `static` não pode acessar diretamente o atributo `nome` de um carro, pois cada objeto possui seu próprio nome.
+
+## Exemplo de uso
+
+```java
+Carro c1 = new Carro("BMW", 280);
+Carro c2 = new Carro("Mercedes", 275);
+
+Carro.setVelocidadeLimite(180);
+
+c1.imprime();
+c2.imprime();
+```
+
+Mesmo que os carros tenham velocidades máximas diferentes, ambos compartilham o mesmo limite de velocidade.
+
+## Quando utilizar static?
+
+O modificador `static` é útil quando um dado ou comportamento não depende de um objeto específico.
+
+Alguns exemplos comuns:
+
+- Valores compartilhados entre objetos.
+- Constantes.
+- Métodos utilitários que não dependem de atributos de instância.
+
+Já os atributos que representam características individuais de cada objeto devem ser atributos de instância.
