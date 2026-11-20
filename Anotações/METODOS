@@ -1,35 +1,112 @@
 # Métodos em Java
 
-Métodos são blocos de código responsáveis por definir o comportamento de uma classe. Eles representam as ações que um objeto pode executar e ajudam a organizar a lógica do programa, evitando repetição de código e facilitando a manutenção.
+Métodos são blocos de código responsáveis por definir os comportamentos de uma classe. Eles representam ações que um objeto pode executar e ajudam a organizar a lógica do programa, evitando repetição de código e facilitando a manutenção.
 
-Um método pode ou não retornar um valor, pode receber parâmetros e pode ser chamado quantas vezes forem necessárias. Quando um método não retorna nada, ele usa o tipo `void`. Quando retorna algum valor, é obrigatório informar o tipo de retorno e usar a palavra-chave `return`.
+Um método pode receber parâmetros, executar instruções e retornar ou não um valor, dependendo da sua finalidade.
 
-Exemplo simples de método:
+## Estrutura de um método
 
-public void imprime() {
-    System.out.println("Imprimindo informações");
+Um método geralmente possui a seguinte estrutura:
+
+```java
+public int somar(int numero1, int numero2) {
+    return numero1 + numero2;
 }
+```
 
-Métodos também podem receber parâmetros, que são valores enviados para o método no momento da chamada:
+Entendendo cada parte:
 
-public void setNome(String nome) {
-    this.nome = nome;
+- `public`: modificador de acesso, que determina onde o método pode ser acessado.
+- `int`: tipo de retorno do método.
+- `somar`: nome do método.
+- `int numero1, int numero2`: parâmetros recebidos pelo método.
+- `return`: devolve o resultado da operação.
+
+## Métodos sem retorno (void)
+
+Quando um método não precisa devolver um resultado, utilizamos o tipo `void`.
+
+```java
+public void imprimirMensagem() {
+    System.out.println("Olá, Java!");
 }
+```
 
-Nesse caso, o método recebe um valor e o utiliza para alterar o estado do objeto.
+Nesse caso, o método apenas executa uma instrução e não retorna um valor.
 
-Quando um método retorna um valor, ele pode ser usado em expressões ou armazenado em variáveis:
+## Parâmetros e argumentos
 
-public String getNome() {
-    return nome;
+Parâmetros são as variáveis declaradas na definição do método. Argumentos são os valores fornecidos quando chamamos esse método.
+
+Exemplo:
+
+```java
+public void imprimirNome(String nome) {
+    System.out.println(nome);
 }
+```
 
-Os métodos podem ser de instância, quando dependem de um objeto para serem chamados, ou `static`, quando pertencem à classe e podem ser acessados sem criar uma instância.
+Na chamada:
 
-Exemplo de método static:
+```java
+imprimirNome("Vitor");
+```
 
-public static void imprimirMensagem() {
-    System.out.println("Método static");
+`nome` é o parâmetro, enquanto `"Vitor"` é o argumento.
+
+## Métodos com retorno
+
+Quando precisamos que um método devolva um resultado, informamos o tipo de retorno e utilizamos `return`.
+
+```java
+public double calcularMedia(double nota1, double nota2) {
+    return (nota1 + nota2) / 2;
 }
+```
 
-Métodos são usados para definir comportamentos, encapsular regras de negócio e tornar o código mais legível e reutilizável. Eles são uma das partes mais importantes da orientação a objetos, pois conectam os dados (atributos) às ações que podem ser realizadas sobre eles.
+Podemos armazenar o resultado em uma variável:
+
+```java
+double media = calcularMedia(8, 10);
+System.out.println(media);
+```
+
+O tipo de dado retornado precisa ser compatível com o tipo declarado no método.
+
+## Métodos de instância e static
+
+Os métodos de instância pertencem aos objetos e precisam de uma instância da classe para serem chamados.
+
+Já os métodos `static` pertencem à própria classe e podem ser chamados sem criar um objeto.
+
+Exemplo:
+
+```java
+public class Calculadora {
+
+    public int somar(int numero1, int numero2) {
+        return numero1 + numero2;
+    }
+
+    public static int multiplicar(int numero1, int numero2) {
+        return numero1 * numero2;
+    }
+}
+```
+
+Utilizando os métodos:
+
+```java
+Calculadora calculadora = new Calculadora();
+
+int soma = calculadora.somar(10, 5);
+int multiplicacao = Calculadora.multiplicar(10, 5);
+```
+
+Observe que precisamos criar um objeto para chamar `somar()`, mas podemos chamar `multiplicar()` diretamente pela classe.
+
+## Conclusão
+
+Métodos são fundamentais na programação Java, pois permitem organizar comportamentos, reutilizar código e separar responsabilidades.
+
+É importante entender seus parâmetros, argumentos, tipos de retorno e modificadores para conseguir estruturar programas de maneira mais organizada.
