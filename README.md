@@ -36,3 +36,10 @@ A ideia é praticar, revisar o conteúdo e acompanhar minha evolução como dese
 ## Anotações
 
 Além dos códigos, o repositório possui [anotações de estudo](Anota%C3%A7%C3%B5es/Readme) com explicações e exemplos de alguns assuntos.
+
+## Organização do repositório
+
+- `src/`: códigos e exercícios desenvolvidos durante os estudos.
+- `Anotações/`: resumos e explicações de alguns conceitos de Java.
+- `AtividadesJava/`: atividades práticas realizadas durante o curso.
+- `pasta/`: arquivos de apoio utilizados nos exercícios de manipulação de arquivos e serialização.
