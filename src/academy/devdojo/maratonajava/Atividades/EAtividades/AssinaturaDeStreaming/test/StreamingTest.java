@@ -8,7 +8,7 @@ public class StreamingTest {
         StreamingService service = new StreamingService();
 
         Cliente clienteNormal = new clienteNormal("Vitor");
-        Cliente clienteVip = new clienteVip("Ana");
+        Cliente clienteVip = new ClienteVip("Ana");
 
         Plano planoBasico = new PlanoBasico();
         Plano planoPremium = new PlanoPremium();
