@@ -1,9 +1,9 @@
-package academy.devdojo.maratonajava.Atividades.EAtividades.Eestacionamento.test;
+package academy.devdojo.maratonajava.Atividades.EAtividades.Estacionamento.test;
 
-import academy.devdojo.maratonajava.Atividades.EAtividades.Eestacionamento.dominio.*;
-import academy.devdojo.maratonajava.Atividades.EAtividades.Eestacionamento.service.EstacionamentoService;
+import academy.devdojo.maratonajava.Atividades.EAtividades.Estacionamento.dominio.*;
+import academy.devdojo.maratonajava.Atividades.EAtividades.Estacionamento.service.EstacionamentoService;
 
-public class EestacionamentoTest {
+public class EstacionamentoTest {
     public static void main(String[] args) {
         EstacionamentoService service = new EstacionamentoService();
 

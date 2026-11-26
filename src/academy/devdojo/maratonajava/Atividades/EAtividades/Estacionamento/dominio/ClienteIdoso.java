@@ -1,4 +1,4 @@
-package academy.devdojo.maratonajava.Atividades.EAtividades.Eestacionamento.dominio;
+package academy.devdojo.maratonajava.Atividades.EAtividades.Estacionamento.dominio;
 
 public class ClienteIdoso extends Cliente{
     @Override
