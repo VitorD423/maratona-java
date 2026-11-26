@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.LocalTime;
 import java.time.temporal.ChronoUnit;
 
-public class DurantionTest01 {
+public class DurationTest01 {
     public static void main(String[] args) {
         LocalDateTime now = LocalDateTime.now();
         LocalDateTime nowAfterTwoYears = LocalDateTime.now().plusYears(2).plusMinutes(8);
