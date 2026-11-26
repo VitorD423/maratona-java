@@ -33,6 +33,19 @@ A ideia é praticar, revisar o conteúdo e acompanhar minha evolução como dese
 - Optional
 - Stream API e Collectors
 
+## Atividades em destaque
+
+- **Assinatura de Streaming:** exercício com herança, polimorfismo e separação de responsabilidades.
+  [Ver atividade](src/academy/devdojo/maratonajava/Atividades/EAtividades/AssinaturaDeStreaming)
+- **Sistema de Frete:** cálculo de frete utilizando interfaces e polimorfismo.
+  [Ver atividade](src/academy/devdojo/maratonajava/Atividades/CAtividades/SistemaDeFrete)
+- **Prova Técnica — Entregas:** exercício com diferentes tipos de entrega e processamento.
+  [Ver atividade](src/academy/devdojo/maratonajava/Atividades/DAtividades/ProvaTecnica)
+- **Biblioteca Genérica:** aplicação de Generics em um sistema de empréstimo de livros e revistas.
+  [Ver atividade](src/academy/devdojo/maratonajava/Atividades/FAtividades/Generica)
+- **Streams:** exercícios de processamento e manipulação de coleções com Stream API.
+  [Ver atividade](src/academy/devdojo/maratonajava/Atividades/FAtividades/Streams)
+
 ## Anotações
 
 Além dos códigos, o repositório possui [anotações de estudo](Anota%C3%A7%C3%B5es/Readme) com explicações e exemplos de alguns assuntos.
