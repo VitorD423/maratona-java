@@ -7,7 +7,7 @@ import academy.devdojo.maratonajava.Atividades.FAtividades.Generica.service.Rent
 import java.util.ArrayList;
 import java.util.List;
 
-public class BlibliotecaTest01 {
+public class BibliotecaTest01 {
     public static void main(String[] args) {
         List<Livro> livrosDisponiveis = new ArrayList<>(List.of(new Livro("Pequeno dalite"), new Livro("A arte da guerra")));
         List<Revista> revitasDisponiveis = new ArrayList<>(List.of(new Revista("Avon 2012"), new Revista("Delux 2025")));
